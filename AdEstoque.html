@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Cadastro de Estoque de Sangue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #da0303;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            display: inline;
+            margin: 0 20px;
+            border: 2px solid #fafafa;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #020000;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #007bff;
+        }
+
+       
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #e00000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bb{
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Cadastro de Estoque de Sangue</h1>
+        <nav>
+
+            <ul>
+                <li><a href="Menu.html">MENU</a></li>
+                <li><a href="DoadorFront.html">DOADORES</a></li>
+                <li><a href="#">TESTE DE SANGUE</a></li>
+                <li><a href="#">RELATÓRIO</a></li>
+            </ul>
+        </nav>
+   
+    </header>
+    
+    <form action="EstoqueAd.php" method="post">
+        <label for="tipoSanguineo">Tipo Sanguíneo:</label>
+        <input type="text" id="tipoSanguineo" name="tipoSanguineo" required>
+
+        <label for="plaquetas">Plaquetas (x10^3/µL):</label>
+        <input type="number" id="plaquetas" name="plaquetas" required>
+
+        <label for="hemacias">Hemácias (x10^6/µL):</label>
+        <input type="number" id="hemacias" name="hemacias" required>
+
+        <label for="plasma">Plasma (mL):</label>
+        <input type="number" id="plasma" name="plasma" required>
+
+        <label for="crioprecipitado">Crioprecipitado (mL):</label>
+        <input type="number" id="crioprecipitado" name="crioprecipitado" required>
+
+        <label for="granulocitos">Granulócitos (x10^3/µL):</label>
+        <input type="number" id="granulocitos" name="granulocitos" required>
+        <center>
+        <button type="submit">Adicionar ao Estoque</button>
+    </center>
+
+    </form>
+    <center>
+    <a class = "bb" href='indexEstoque.php'>
+        <button>Verificar o Estoque</button>
+    </a>
+    </center>
+</body>
+</html>
