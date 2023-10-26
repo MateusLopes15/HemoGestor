@@ -5,7 +5,7 @@ echo"<header>
 <h1>Estoque de Sangue</h1>
 </header>";
 //echo "<meta HTTP-EQUIV='refresh' CONTENT='5;URL=index_s.php'>";
-mostraXMLL('xmll');
+mostraXMLL('XMLSangue');
 echo"
 <style>
 button {
