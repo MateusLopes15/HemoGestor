@@ -36,5 +36,4 @@ XMLL($label,$tipoSanguineo,$plaquetas,$hemacias,$plasma,$crioprecipitado,$granul
 $local = $local."AdEstoque.html";
 header($local);
 exit;
-
 ?>
