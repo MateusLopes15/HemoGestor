@@ -58,43 +58,6 @@ fwrite($fp, $xml);
 fclose($fp);
        
 }
-function CriarXML($label,$x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8,$x9,$x10,$x11,$x12,$x13,$x14){
-  $xml = '<?xml version="1.0" encoding="utf-8"?>';
-  $xml .= '<links>';
-   $xml .= '<link>';
-   if(isset($x1)) $xml .= '<'.$label[0].'>'. $x1 .'</'.$label[0].'>';
-   if(isset($x2))$xml .= '<'.$label[1].'>'. $x2.'</'.$label[1].'>';
-   if(isset($x3))$xml .= '<'.$label[2].'>'. $x3.'</'.$label[2].'>';
-  if(isset($x4))	$xml .= '<'.$label[3].'>'. $x4.'</'.$label[3].'>';
-   if(isset($x5))$xml .= '<'.$label[4].'>'. $x5.'</'.$label[4].'>';
-   if(isset($x6))$xml .= '<'.$label[5].'>'. $x6.'</'.$label[5].'>';
-   if(isset($x7)) $xml .= '<'.$label[6].'>'. $x7 .'</'.$label[6].'>';
-   if(isset($x8))$xml .= '<'.$label[7].'>'. $x8.'</'.$label[7].'>';
-   if(isset($x9))$xml .= '<'.$label[8].'>'. $x9.'</'.$label[8].'>';
-  if(isset($x10))	$xml .= '<'.$label[9].'>'. $x10.'</'.$label[9].'>';
-   if(isset($x11))$xml .= '<'.$label[10].'>'. $x11.'</'.$label[10].'>';
-   if(isset($x12))$xml .= '<'.$label[11].'>'. $x12.'</'.$label[11].'>';
-   if(isset($x13)) $xml .= '<'.$label[12].'>'. $x13 .'</'.$label[12].'>';
-   if(isset($x14))$xml .= '<'.$label[13].'>'. $x14.'</'.$label[13].'>';
-
-  //$fim = count($label) - 1;
-  //$xml .= '<modo>'. $label[$fim].'</modo>';
-   $xml .= '</link>';
-  // Fechamento da raiz
-  $xml .= '</links>';
-  return $xml;
-}
-function CriaArquivoXML($xml,$caminhoArquivo){
-  $fp = fopen($caminhoArquivo, "w+");
-  fwrite($fp, $xml);
-  fclose($fp);
-}
-function DeletaArquivo($caminhoArquivo){
-  $arquivo = fopen($caminhoArquivo, "r");
-  if(isset($arquivo)){
-    unlik($caminhoArquivo);
-  }
-}
  function contar($arq){
     $fp = fopen($arq, "r");
     $c = fgets($fp,1000);
@@ -117,23 +80,75 @@ function mostraXML($folder){
        if ($ler != NULL){
          $xml = simplexml_load_file($ler);
          //unlink($ler);
-         echo "nome: ".$xml->link->nome."<br/>";
-         echo "Mãe: ".$xml->link->nomeMae."<br/>";
-         echo "email: ".$xml->link->email."<br/>";
-         echo "nomeSocial: ".$xml->link->nomeSocial."<br/>";
-         echo "telefone: ".$xml->link->telefone."<br/>";
-         echo "CPF: ".$xml->link->cpf."<br/>";
-         echo "RG: ".$xml->link->rg."<br/>";
-         echo "Data de Nascimento: ".$xml->link->dataNascimento."<br/>";
-         echo "sexo: ".$xml->link->sexo."<br/>";
-         echo "Tipo de Doador: ".$xml->link->tipoDoador."<br/>";
-         echo "Tipo Sanguíneo: ".$xml->link->tipoSanguineo."<br/>";
-         echo "Autorização: ".$xml->link->autorizacaoComunicacao."<br/>";
-         echo "-------------------------------------------------------------"."</br>";
-       }
+         echo"<html>
+                  <head>
+                      <title>Informações de Cadastro</title>
+                      <style>
+                          /* Estilizando a borda vermelha */
+                          .container {
+                              border: 2px solid red;
+                              padding: 20px;
+                              width: 65%;
+                              margin: 0 auto;
+                              box-shadow: 3px 3px 5px 0px #777;
+                              margin-bottom: 20px;
+                              border-radius: 25px;
+                              font-size: 30 px;
+                          }
+                  
+                          /* Estilizando os campos */
+                          .campo {
+                            margin-bottom: 10px;
+                            padding: 15px;
+                            font-size: 25px
+                          }
+                      </style>
+                  </head>";
+                  echo"<body>
+                             <div class='container'>
+                               <div class='campo'>";
+                             echo "<strong> nome: </strong>".$xml->link->nome."<br/>";
+                               echo "</div>";
+                               echo"<div class='campo'>";
+                                 echo "Mãe: ".$xml->link->nomeMae."<br/>";
+                                 echo "</div>";
+                                echo" <div class='campo'>";
+                                 echo "email: ".$xml->link->email."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>";
+                                 echo "nomeSocial: ".$xml->link->nomeSocial."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>"; 
+                                 echo "telefone: ".$xml->link->telefone."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>";
+                                 echo "CPF: ".$xml->link->cpf."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>"; 
+                                 echo "RG: ".$xml->link->rg."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>";
+                                 echo "Data de Nascimento: ".$xml->link->dataNascimento."<br/>";
+                               echo"</div>";
+                               echo" <div class='campo'>";
+                                 echo "sexo: ".$xml->link->sexo."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>"; 
+                                 echo "Tipo de Doador: ".$xml->link->tipoDoador."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>";
+                                 echo "Tipo Sanguíneo: ".$xml->link->tipoSanguineo."<br/>";
+                                 echo "</div>";
+                                 echo" <div class='campo'>";
+                                 echo "Autorização: ".$xml->link->autorizacaoComunicacao."<br/>";
+                                 echo "</div>";
+                             echo "</div>";
+                             echo "</body>";
+                             echo "</html>";
+        }
       }
    }
-   closedir($handle);
+   closedir($handle); 
  }
 }
 function mostraXMLL($folder){
