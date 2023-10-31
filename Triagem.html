@@ -25,30 +25,29 @@
             </ul>
         </div>
     </header>
-<form action="/search" method="get">
-    <input type="text" name="q" placeholder="Search...">
-    <input type="submit" value="Search">
+
+<form action="EstoqueAd.php" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" required><br><br>
+
+    <label for="tipoSanguineo">Tipo Sanguíneo:</label>
+    <select id="tipoSanguineo" name="tipoSanguineo" required>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+    </select><br><br>
+
+    <input type="submit" name="aprovado" value="Aprovado">
+    <input type="submit" name="reprovado" value="Reprovado">
 </form>
-<table>
-    <tr>
-        <th>Doador</th>
-        <th>Bolsa</th>
-        <th>Apto</th>
-    </tr>
-    <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-        <td><span class="material-symbols-outlined">
-            done
-            </span></td>
-    </tr>
-    <tr>
-        <td>Data 3</td>
-        <td>Data 4</td>
-        <td><span class="material-symbols-outlined">
-            close
-            </span></td>
-    </tr>
-</table>
+<!--<form action="/search" method="get">
+    <input type="text" name="q" placeholder="Search...">
+   <input type="submit" value="Search">
+</form>-->
 </body>
 </html>
