@@ -39,7 +39,7 @@ if($aprovado =="Aprovado"){
     $plasma = $info->link->plasma + 1;
     $crioprecipitado = $info->link->crioprecipitado + 1;
     $granulocitos = $info->link->granulocitos + 1;
-    //echo $plaquetas;
+
 
 
     $label =['tipoSanguineo','plaquetas', 'hemacias','plasma', 'crioprecipitado', 'granulocitos'];
@@ -49,6 +49,7 @@ if($aprovado =="Aprovado"){
     $arqu = "TriagemXML/".$id.".xml";
     $labell =['id','tipoSanguineo','aprovado'];
     XMLLL($labell,$id,$tipoSanguineo,$aprovado,$arqu);
+    $local ="Triagem.html";
     header($local);
     exit;
 
@@ -57,6 +58,7 @@ elseif($reprovado == "Reprovado"){
     $arqu = "TriagemXML/".$id.".xml";
     $labell =['id','tipoSanguineo','reprovado'];
     XMLLL($labell,$id,$tipoSanguineo,$reprovado,$arqu);
+    $local ="Triagem.html";
     header($local);
     exit;
 }
