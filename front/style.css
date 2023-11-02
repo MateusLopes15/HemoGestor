@@ -20,6 +20,10 @@ html{
 body{
     margin: 0;
 }
+h2{
+    text-align: center;
+    color: #002B5B;
+}
 .HemogestorBarraSuperior{
     background-color: #EA5455;
     display: flex;;
@@ -89,7 +93,7 @@ body{
 .Menu {
     background-color: #E4DCCF;
 }
-.Doadores{
+.Doadores, .Estoque{
     background: #C4BBAD;
 }
 .formulário{
@@ -108,7 +112,7 @@ body{
 .formulário label{
     color: #002B5B;
 }
-.formulário2{
+.Doadores .formulário2{
     position: relative;
     top: -40px;
 }
@@ -124,7 +128,8 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="tel"],
-input[type="date"] {
+input[type="date"],
+input[type="number"]{
     width: 96%;
     padding: 10px;
     border: 1px solid #ccc;
