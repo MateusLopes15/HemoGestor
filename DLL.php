@@ -105,71 +105,86 @@ function mostraXML($folder){
        if ($ler != NULL){
          $xml = simplexml_load_file($ler);
          //unlink($ler);
-         echo"<html>
-                  <head>
-                      <title>Informações de Cadastro</title>
-                      <style>
-                          /* Estilizando a borda vermelha */
-                          .container {
-                              border: 2px solid red;
-                              padding: 20px;
-                              width: 65%;
-                              margin: 0 auto;
-                              box-shadow: 3px 3px 5px 0px #777;
-                              margin-bottom: 20px;
-                              border-radius: 25px;
-                              font-size: 30 px;
-                          }
-                  
-                          /* Estilizando os campos */
-                          .campo {
-                            margin-bottom: 10px;
-                            padding: 15px;
-                            font-size: 25px
-                          }
-                      </style>
-                  </head>";
-                  echo"<body>
-                             <div class='container'>
-                               <div class='campo'>";
-                             echo "<strong> nome: </strong>".$xml->link->nome."<br/>";
-                               echo "</div>";
-                               echo"<div class='campo'>";
-                                 echo "Mãe: ".$xml->link->nomeMae."<br/>";
-                                 echo "</div>";
-                                echo" <div class='campo'>";
-                                 echo "email: ".$xml->link->email."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>";
-                                 echo "nomeSocial: ".$xml->link->nomeSocial."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>"; 
-                                 echo "telefone: ".$xml->link->telefone."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>";
-                                 echo "CPF: ".$xml->link->cpf."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>"; 
-                                 echo "RG: ".$xml->link->rg."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>";
-                                 echo "Data de Nascimento: ".$xml->link->dataNascimento."<br/>";
-                               echo"</div>";
-                               echo" <div class='campo'>";
-                                 echo "sexo: ".$xml->link->sexo."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>"; 
-                                 echo "Tipo de Doador: ".$xml->link->tipoDoador."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>";
-                                 echo "Tipo Sanguíneo: ".$xml->link->tipoSanguineo."<br/>";
-                                 echo "</div>";
-                                 echo" <div class='campo'>";
-                                 echo "Autorização: ".$xml->link->autorizacaoComunicacao."<br/>";
-                                 echo "</div>";
-                             echo "</div>";
-                             echo "</body>";
-                             echo "</html>";
+         echo "<html>
+      <head>
+          <title>Informações de Cadastro</title>
+          <style>
+              /* Estilizando a borda vermelha */
+              .container {
+                  border: 2px solid #EA5455;
+                  padding: 20px;
+                  width: 65%;
+                  margin: 0 auto;
+                  box-shadow: 3px 3px 5px 0px #777;
+                  margin-top: 20px;
+                  border-radius: 25px;
+              }
+
+              /* Estilizando a tabela */
+              table {
+                  width: 100%;
+                  border-collapse: separate; /* Separação das bordas das células */
+
+              }
+
+              /* Estilizando as células da tabela */
+              th, td {
+                color: black;
+                padding: 10px;
+                font-size: 20px;
+                border: 1px solid #E4DCCF; /* Adiciona uma borda suave */
+                background-color: #F9F5EB;
+                
+              }
+          </style>
+      </head>";
+echo "<body>
+      <div class='container'>
+          <table>
+              <tr>
+                  <th>Nome: </th>
+                  <th>N. Mãe: </th>
+                  <th>Email: </th>
+              </tr>
+              <tr>
+                  <td>" . $xml->link->nome . "</td>
+                  <td>" . $xml->link->nomeMae . "</td>
+                  <td>" . $xml->link->email . "</td>
+              </tr>
+              <tr>
+                  <th>N. Social: </th>
+                  <th>Telefone: </th>
+                  <th>CPF: </th>
+              </tr>
+              <tr>
+                  <td>" . $xml->link->nomeSocial . "</td>
+                  <td>" . $xml->link->telefone . "</td>
+                  <td>" . $xml->link->cpf . "</td>
+              </tr>
+              <tr>
+                  <th>RG: </th>
+                  <th>D. Nascimento: </th>
+                  <th>Sexo</th>
+              </tr>
+              <tr>
+                  <td>" . $xml->link->rg . "</td>
+                  <td>" . $xml->link->dataNascimento . "</td>
+                  <td>" . $xml->link->sexo . "</td>
+              </tr>
+              <tr>
+                  <th>T. Doador: </th>
+                  <th>T. Sanguíneo: </th>
+                  <th>Autorização: </th>
+              </tr>
+              <tr>
+                  <td>" . $xml->link->tipoDoador . "</td>
+                  <td>" . $xml->link->tipoSanguineo . "</td>
+                  <td>" . $xml->link->autorizacaoComunicacao . "</td>
+              </tr>
+          </table>
+      </div>
+      </body>
+      </html>";
         }
       }
    }
