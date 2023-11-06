@@ -13,6 +13,9 @@
     bloodtype, health_metrics, blood_pressure, hematology
     </span>
 */
+*{
+    font-family: 'Roboto', sans-serif;
+}
 html{
     font-family: 'Roboto', sans-serif;
     background-color: #E4DCCF;
