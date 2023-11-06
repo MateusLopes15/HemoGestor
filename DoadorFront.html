@@ -1,24 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html class="Doadores">
 <head>
     <meta charset="UTF-8">
     <title>Formulário de Cadastro</title>
-    <link rel="stylesheet" href="./styleDoador.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+<header class="HemogestorBarraSuperior">
+    <div class="HemogestorBarraSuperior">
+        <span class="material-symbols-outlined">
+            bloodtype
+            </span>
+        <h1>Hemogestor</h1>
+        <ul>
+        <li><a href="./Menu.html">Menu</a></li>
+        <li><a href="./DoadorFront.html">Doadores</a></li>
+        <li><a href="./AdEstoque.html">Estoque</a></li>
+        <li><a href="./Triagem.html">Triagem</a></li>
+        <li><a href="./Relatório.html">Relatório</a></li>
+        </ul>
+    </div>
+</header>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="DoadorFront.html">DOADORES</a></li>
-                <li><a href="AdEstoque.html">ESTOQUE</a></li>
-                <li><a href="#">TESTE DE SANGUE</a></li>
-                <li><a href="#">RELATÓRIO</a></li>
-            </ul>
-        </nav>
-    </header>
-    <center><h2>Formulário de Cadastro</h2></center>
+    <div class="formulário">
+    <center><h2>Formulário de Cadastro de Doadores</h2></center>
     <meta charset="UTF-8">
-    <form action="pj_func.php" method="post">
+    <form class="formulário2" action="pj_func.php" method="post">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 
@@ -43,21 +54,21 @@
         <label for="dataNascimento">Data de Nascimento:</label>
         <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
 
-        <label>SEXO:</label><br>
+        <label>Sexo:</label>
         <input type="radio" id="feminino" name="sexo" value="Feminino">
         <label for="feminino">Feminino</label><br>
 
         <input type="radio" id="masculino" name="sexo" value="Masculino">
         <label for="masculino">Masculino</label><br><br>
 
-        <label for="tipoDoador">Tipo de Doador:</label><br>
+        <label for="tipoDoador">Tipo de Doador:</label>
         <select id="tipoDoador" name="tipoDoador" required>
-            <option value="Doador de Campanha">Campanha</option>
-            <option value="Doador Esporádico">Esporádico</option>
-            <option value="Doador Recorrente">Recorrente</option>
+            <option value="Doador de Campanha">Doador de Campanha</option>
+            <option value="Doador Esporádico">Doador Esporádico</option>
+            <option value="Doador Recorrente">Doador Recorrente</option>
         </select><br><br>
 
-        <label for="tipoSanguineo">Tipo Sanguíneo:</label><br>
+        <label for="tipoSanguineo">Tipo Sanguíneo:</label>
         <select id="tipoSanguineo" name="tipoSanguineo" required>
             <option value="A+">A+</option>
             <option value="A-">A-</option>
@@ -81,5 +92,6 @@
         <button>Visualizar Doadores</button>
     </a>
 </center>
+</div>
 </body>
 </html>

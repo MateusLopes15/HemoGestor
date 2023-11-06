@@ -3,42 +3,157 @@
 #E4DCCF - Cinza
 #EA5455 - Vermelho
 #002B5B - Azul
+#C4BBAD - Cinza escuro
+#D74444 - Vermelho escuro
+#D13D3D - Vermelho mais escuro
+
+
+Ícones
+<span class="material-symbols-outlined">
+    bloodtype, health_metrics, blood_pressure, hematology
+    </span>
 */
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-.HemogestorTitulo{
-  background-color: #EA5455;
-  color: #E4DCCF;
+html{
+    font-family: 'Roboto', sans-serif;
+    background-color: #E4DCCF;
 }
 body{
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background-color: #F9F5EB;
+    margin: 0;
 }
-ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
+h2{
+    text-align: center;
+    color: #002B5B;
 }
-li {
-  display: inline;
-  margin: 0 20px;
-  padding: 10px 20px;
+.HemogestorBarraSuperior{
+    background-color: #EA5455;
+    display: flex;;
+    height: 50px;
+    width: 100%;
 }
-a{
-  color: #E4DCCF;
-  text-decoration: none;
+.HemogestorBarraSuperior div{
+    position: fixed;
+    z-index: 1;
 }
-th{
-  color: #002B5B;
-  background-color: #E4DCCF;
+.HemogestorBarraSuperior .material-symbols-outlined{
+    color: #E4DCCF;
+    font-size: 32px;
 }
-td{
-  color: #002B5B;
-  background-color: #E4DCCF;
+.HemogestorBarraSuperior h1{
+    font-size: 32px;
+    color: #E4DCCF;
+    position: absolute;
+    left: 36px;
+    top: -14px;
+}
+.HemogestorBarraSuperior ul{
+    position: relative;
+    left: 160px;
+}
+.HemogestorBarraSuperior li{
+    display: inline;
+    color: #E4DCCF;
+    padding: 20px;
+}
+.HemogestorBarraSuperior a{
+    color: #E4DCCF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.HemogestorBarraSuperior a:hover {
+    color: #002B5B;
+}
+.HemogestorBarraSuperior span{
+    position: relative;
+    top: 10px;
+}
+.Menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #EA5455;
+    text-align: center;
+}
+
+.Menu li {
+    display: inline;
+}
+
+.Menu li a {
+    display: block;
+    color: #002B5B;
+    text-align: center;
+    padding: 56px 64px;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.Menu li a:hover {
+    background-color: #C4BBAD;
+}
+.Menu {
+    background-color: #E4DCCF;
+}
+.Doadores, .Estoque{
+    background: #C4BBAD;
+}
+.formulário{
+    width: 50%;
+    margin: 0 auto;
+    background: #E4DCCF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.formulário h2{
+    color: #002B5B;
+    position: relative;
+    top: -32px;
+}
+.formulário label{
+    color: #002B5B;
+}
+.formulário2{
+    position: relative;
+    top: -40px;
+}
+.formulário2 form{
+    margin: 20px 0;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"]{
+    width: 99%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"], button {
+    background-color: #EA5455;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+label[for="feminino"], label[for="masculino"]{
+    display: inline-block;
+    margin-right: 10px;
+}
+#tipoDoador, #tipoSanguineo{
+    width: 102%;
+    padding: 10px;
+    border: 1px solid#ccc;
+    border-radius: 4px;
+}
+label[for="autorizacaoComunicacao"]{
+    display: inline-block;
+    margin-right: 1px;
 }
