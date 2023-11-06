@@ -112,7 +112,7 @@ h2{
 .formulário label{
     color: #002B5B;
 }
-.Doadores .formulário2{
+.formulário2{
     position: relative;
     top: -40px;
 }
@@ -130,7 +130,7 @@ input[type="password"],
 input[type="tel"],
 input[type="date"],
 input[type="number"]{
-    width: 96%;
+    width: 99%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -148,7 +148,7 @@ label[for="feminino"], label[for="masculino"]{
     margin-right: 10px;
 }
 #tipoDoador, #tipoSanguineo{
-    width: 100%;
+    width: 102%;
     padding: 10px;
     border: 1px solid#ccc;
     border-radius: 4px;
