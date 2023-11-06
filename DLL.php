@@ -147,38 +147,39 @@ function mostraXML($folder){
               }
           </style>
       </head>";
-  echo "<body>
+echo "<body>
       <div class='container'>
           <table>
               <tr>
                   <th>Nome: </th>
-                  <th>N. Mãe: </th>
-                  <th>Email: </th>
+                  <th>D. Nascimento: </th>
+
+                  <th>Sexo</th>
               </tr>
               <tr>
                   <td>" . $xml->link->nome . "</td>
-                  <td>" . $xml->link->nomeMae . "</td>
-                  <td>" . $xml->link->email . "</td>
+                  <td>" . $xml->link->dataNascimento . "</td>
+                  <td>" . $xml->link->sexo . "</td>
               </tr>
               <tr>
                   <th>N. Social: </th>
                   <th>Telefone: </th>
-                  <th>CPF: </th>
+                  <th>Email: </th>
               </tr>
               <tr>
                   <td>" . $xml->link->nomeSocial . "</td>
                   <td>" . $xml->link->telefone . "</td>
-                  <td>" . $xml->link->cpf . "</td>
+                  <td>" . $xml->link->email . "</td>
               </tr>
               <tr>
+                  <th>N. Mãe: </th>
                   <th>RG: </th>
-                  <th>D. Nascimento: </th>
-                  <th>Sexo</th>
+                  <th>CPF: </th>
               </tr>
               <tr>
+                  <td>" . $xml->link->nomeMae . "</td>
                   <td>" . $xml->link->rg . "</td>
-                  <td>" . $xml->link->dataNascimento . "</td>
-                  <td>" . $xml->link->sexo . "</td>
+                  <td>" . $xml->link->cpf . "</td>
               </tr>
               <tr>
                   <th>T. Doador: </th>
@@ -192,9 +193,9 @@ function mostraXML($folder){
               </tr>
           </table>
           <a href=\"deletarDoador.php?id=".$idArquivo."\"><p>Deletar ".$idArquivo."</p></a>
-      </div>
-      </body>
-      </html>";
+          </div>
+          </body>
+          </html>";
         }
       }
    }
