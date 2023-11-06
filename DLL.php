@@ -97,6 +97,11 @@ function XMLLL($label,$x1,$x2,$x3,$file){
  return $c;
 }
 
+function deletarRegistro($caminhoArquivo){
+  $status = unlink($caminhoArquivo);
+  return $status;
+}
+
 function mostraXML($folder){
   include "cons.php";
  // Listar XMLs da pasta
@@ -105,6 +110,7 @@ function mostraXML($folder){
      if ($entry != "." && $entry != "..") {
        // Carregar XML usando o simplexml
        $ler = $folder . '/' . $entry;
+       $idArquivo = substr($entry,9,3);
        if ($ler != NULL){
          $xml = simplexml_load_file($ler);
          //unlink($ler);
@@ -185,7 +191,7 @@ function mostraXML($folder){
                   <td>" . $xml->link->autorizacaoComunicacao . "</td>
               </tr>
           </table>
-          <a href=\"deletarDoador.php\"><p>Deletar</p></a>
+          <a href=\"deletarDoador.php?id=".$idArquivo."\"><p>Deletar ".$idArquivo."</p></a>
       </div>
       </body>
       </html>";
