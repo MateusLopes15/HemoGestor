@@ -23,14 +23,15 @@ function XML($label,$x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8,$x9,$x10,$x11,$x12,$file){
     //$fim = count($label) - 1;
     //$xml .= '<modo>'. $label[$fim].'</modo>';
      $xml .= '</link>';
- // Fechamento da raiz
-   $xml .= '</links>';
- 
- $fp = fopen($file, "w+");
- fwrite($fp, $xml);
- fclose($fp);
+    // Fechamento da raiz
+    $xml .= '</links>';
+    
+    $fp = fopen($file, "w+");
+    fwrite($fp, $xml);
+    fclose($fp);
          
  }
+
  function XMLL($label,$x1,$x2,$x3,$x4,$x5,$x6,$file){
 	
   $xml = '<?xml version="1.0" encoding="utf-8"?>';
@@ -50,14 +51,15 @@ function XML($label,$x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8,$x9,$x10,$x11,$x12,$file){
   //$fim = count($label) - 1;
   //$xml .= '<modo>'. $label[$fim].'</modo>';
    $xml .= '</link>';
-// Fechamento da raiz
- $xml .= '</links>';
+  // Fechamento da raiz
+  $xml .= '</links>';
 
-$fp = fopen($file, "w+");
-fwrite($fp, $xml);
-fclose($fp);
+  $fp = fopen($file, "w+");
+  fwrite($fp, $xml);
+  fclose($fp);
        
 }
+
 function XMLLL($label,$x1,$x2,$x3,$file){
 	
   $xml = '<?xml version="1.0" encoding="utf-8"?>';
@@ -75,14 +77,15 @@ function XMLLL($label,$x1,$x2,$x3,$file){
   //$fim = count($label) - 1;
   //$xml .= '<modo>'. $label[$fim].'</modo>';
    $xml .= '</link>';
-// Fechamento da raiz
- $xml .= '</links>';
+  // Fechamento da raiz
+  $xml .= '</links>';
 
-$fp = fopen($file, "w+");
-fwrite($fp, $xml);
-fclose($fp);
-       
+  $fp = fopen($file, "w+");
+  fwrite($fp, $xml);
+  fclose($fp);
+        
 }
+
  function contar($arq){
     $fp = fopen($arq, "r");
     $c = fgets($fp,1000);
@@ -138,7 +141,7 @@ function mostraXML($folder){
               }
           </style>
       </head>";
-echo "<body>
+  echo "<body>
       <div class='container'>
           <table>
               <tr>
@@ -182,6 +185,7 @@ echo "<body>
                   <td>" . $xml->link->autorizacaoComunicacao . "</td>
               </tr>
           </table>
+          <a href=\"deletarDoador.php\"><p>Deletar</p></a>
       </div>
       </body>
       </html>";
@@ -191,6 +195,34 @@ echo "<body>
    closedir($handle); 
  }
 }
+
+function validacaoUsuario($usuario, $senha){
+  $pasta = 'arquivos/usuario';
+  $senhaHash = hash('sha256', $senha);
+
+  if ($handle = opendir($pasta)) {
+    while (false !== ($entry = readdir($handle))) {
+      if ($entry != "." && $entry != "..") {
+        // Carregar XML usando o simplexml
+        $ler = $pasta . '/' . $entry;
+        if ($ler != NULL){
+          $xml = simplexml_load_file($ler);
+          if($xml->link->nomeUsuario == $usuario && $xml->link->senha == $senhaHash){
+            return "Usuario encontrado!";
+          }elseif($xml->link->nomeUsuario != $usuario){
+            return "Usuario nao encontrado!";
+          }elseif($xml->link->nomeUsuario == $usuario && $xml->link->senha != $senhaHash){
+            return "Senha inserida incorreta!";
+          }else{
+            return "Erro ao processar informacoes do login!";
+          }
+        }
+      }
+    }
+   closedir($pasta);
+  }
+}
+
 function mostraXMLL($folder){
   include "cons.php";
  // Listar XMLs da pasta
@@ -274,6 +306,7 @@ function mostraXMLL($folder){
    closedir($handle);
  }
 }
+
 function PegarValor($folder){
   include "cons.php";
   // Listar XMLs da pasta
