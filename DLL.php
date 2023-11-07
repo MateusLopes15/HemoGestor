@@ -192,7 +192,7 @@ echo "<body>
                   <td>" . $xml->link->autorizacaoComunicacao . "</td>
               </tr>
           </table>
-          <a href=\"deletarDoador.php?id=".$idArquivo."\"><p>Deletar ".$idArquivo."</p></a>
+          <a class='HemogestorBarraSuperior' href=\"deletarDoador.php?id=".$idArquivo."\"><p>Deletar ".$idArquivo."</p></a>
           </div>
           </body>
           </html>";
