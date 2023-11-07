@@ -18,7 +18,6 @@
 }
 html{
     font-family: 'Roboto', sans-serif;
-    background-color: #E4DCCF;
 }
 body{
     margin: 0;
@@ -159,4 +158,25 @@ label[for="feminino"], label[for="masculino"]{
 label[for="autorizacaoComunicacao"]{
     display: inline-block;
     margin-right: 1px;
+}
+h1.menuinfo{
+    font-size: 84px;
+    position: absolute;
+    bottom: 120px;
+    color: #F9F5EB;
+    left: 1%;
+}
+p.menuinfo{
+    font-size: x-large;
+    position: absolute;
+    color: #F9F5EB;
+    width: 800px;
+    bottom: 20px;
+    left: 1%;
+}
+body.menugabrie{
+    background-image: url(./imagens/doandosangueunsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
