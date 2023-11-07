@@ -60,7 +60,7 @@ function XML($label,$x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8,$x9,$x10,$x11,$x12,$file){
        
 }
 
-function XMLLL($label,$x1,$x2,$x3,$file){
+function XMLLL($label,$x1,$x2,$x3,$x4,$file){
 	
   $xml = '<?xml version="1.0" encoding="utf-8"?>';
   $xml .= '<links>';
@@ -68,6 +68,7 @@ function XMLLL($label,$x1,$x2,$x3,$file){
    if(isset($x1)) $xml .= '<'.$label[0].'>'. $x1 .'</'.$label[0].'>';
    if(isset($x2))$xml .= '<'.$label[1].'>'. $x2.'</'.$label[1].'>';
    if(isset($x3))$xml .= '<'.$label[2].'>'. $x3.'</'.$label[2].'>';
+   if(isset($x4))$xml .= '<'.$label[3].'>'. $x4.'</'.$label[3].'>';
   
 
  
