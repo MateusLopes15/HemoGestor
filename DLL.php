@@ -263,7 +263,7 @@ function mostraXML($folder){
       <head>
           <title>Informações de Cadastro</title>
           <style>
-              /* Estilizando a borda vermelha */
+             
               .container {
                   border: 2px solid #EA5455;
                   padding: 20px;
@@ -274,14 +274,14 @@ function mostraXML($folder){
                   border-radius: 25px;
               }
 
-              /* Estilizando a tabela */
+              
               table {
                   width: 100%;
                   border-collapse: separate; /* Separação das bordas das células */
 
               }
 
-              /* Estilizando as células da tabela */
+              
               th, td {
                 color: black;
                 padding: 10px;
@@ -399,15 +399,15 @@ function mostraXMLL($folder){
                  }
          
                  header {
-                     background-color: #ff0000;
-                     color: #fff;
+                     
                      text-align: center;
                      padding: 20px 0;
                  }
-         
-                 h1 {
-                     margin: 0;
+                 h1{
+                  margin : 0;
                  }
+
+         
          
                  table {
                      width: 100%;
@@ -418,11 +418,14 @@ function mostraXMLL($folder){
                      border: 1px solid #ccc;
                      padding: 10px;
                      text-align: center;
+                    
                  }
          
                  th {
-                     background-color: #eee;
+                     background-color: #F9F5EB;
                  }
+                 
+                 
          
              </style>
          </head>";
