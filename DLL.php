@@ -116,9 +116,8 @@ function mostraXML($folder){
          //unlink($ler);
          echo "<html>
       <head>
-          <title>Informações de Cadastro</title>
+          <title>Informações dos Doares</title>
           <style>
-              /* Estilizando a borda vermelha */
               .container {
                   border: 2px solid #EA5455;
                   padding: 20px;
@@ -127,21 +126,22 @@ function mostraXML($folder){
                   box-shadow: 3px 3px 5px 0px #777;
                   margin-top: 20px;
                   border-radius: 25px;
+                  background-color: #f2f2f2;
               }
 
-              /* Estilizando a tabela */
+              
               table {
                   width: 100%;
-                  border-collapse: separate; /* Separação das bordas das células */
+                  border-collapse: separate; 
 
               }
 
-              /* Estilizando as células da tabela */
+              
               th, td {
-                color: black;
+                color: #002B5B;
                 padding: 10px;
                 font-size: 20px;
-                border: 1px solid #E4DCCF; /* Adiciona uma borda suave */
+                border: 1px solid #E4DCCF; 
                 background-color: #F9F5EB;
                 
               }
