@@ -4,7 +4,7 @@ include "cons.php";
 include "DLL.php";
 $id = $_GET['id'];
 
-$status = deletarRegistro('xml/dados.xml'. $id);
+$status = deletarRegistro('xml/'.$id.'.xml');
 
 if($status){
     echo "Arquivo deletado com sucesso!";
