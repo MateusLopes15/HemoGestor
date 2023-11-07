@@ -111,6 +111,7 @@ function formularioAlterarDoador($caminhoArquivo){
         $ler = $caminhoArquivo;
         if ($ler != NULL){
           $xml = simplexml_load_file($ler);
+          
           echo "<html class=\"Doadores\">
           <head>
               <meta charset=\"UTF-8\">
