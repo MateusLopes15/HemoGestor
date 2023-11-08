@@ -19,18 +19,28 @@
         <ul>
         <li><a href="./Menu.html">Menu</a></li>
         <li><a href="./DoadorFront.html">Doadores</a></li>
-        <li><a href="./AdEstoque.html">Estoque</a></li>
+        <li><a href="./indexEstoque.php">Estoque</a></li>
         <li><a href="./Triagem.html">Triagem</a></li>
         <li><a href="./Relatório.html">Relatório</a></li>
         </ul>
     </div>
 </header>
 <body>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    
     <div class="formulário">
     <h2>Teste das Bolsas de Sangue</h2>
     <form action="EstoqueAd.php" method="post" class="formulário2">
-        <label for="id">ID:</label>
+
+        <label for="id">Código de Barra:</label>
         <input type="text" id="id" name="id" required><br><br>
+
+        <label for="id">Código do Doador:</label>
+        <input type="text" id="idoador" name="idoador" required><br><br>
     
         <label for="tipoSanguineo">Tipo Sanguíneo:</label>
         <select id="tipoSanguineo" name="tipoSanguineo" required>

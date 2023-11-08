@@ -15,13 +15,13 @@ echo   "<head>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
 </head>
 <body>
-<header class='HemogestorTitulo'>
+<header class='HemogestorBarraSuperior'>
     <div style='display: flex; align-items: center;'>
         <span class='material-symbols-outlined' style='font-size: 32px;'>Bloodtype</span>
         <h1 style='margin-left: 10px;'>Hemogestor</h1>
         <ul>
         <li><a href='./DoadorFront.html'>Doadores</a></li>
-        <li><a href='./EstoqueAd.php'>Estoque</a></li>
+        <li><a href='./indexEstoque.php'>Estoque</a></li>
         <li><a href='./Triagem.html'>Triagem</a></li> 
         <li><a href=''>Relatório</a></li>
         </ul>
