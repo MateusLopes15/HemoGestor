@@ -180,3 +180,39 @@ body.menugabrie{
     background-position: center;
     background-attachment: fixed;
 }
+
+
+.bonito{
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #EA5455;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.banner-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-slide {
+    display: none;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-slide img {
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    margin: 10px;
+
+}
