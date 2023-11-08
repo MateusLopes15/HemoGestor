@@ -31,9 +31,9 @@ switch ($tipoSanguineo) {
         break; 
 
 };
-if(isset($aprovado) or isset($reprovado)) {
+if(isset($aprovado)) {
     
-if($aprovado =="Aprovado"){
+if($aprovado == "Aprovado"){
     
     $info = PegarValor($arq);
     $plaquetas = $info->link->plaquetas + 1;
@@ -44,25 +44,30 @@ if($aprovado =="Aprovado"){
     
     $label =['tipoSanguineo','plaquetas', 'hemacias','plasma', 'crioprecipitado', 'granulocitos'];
     XMLL($label,$tipoSanguineo,$plaquetas,$hemacias,$plasma,$crioprecipitado,$granulocitos,$arq);
-    $local = $local."AdEstoque.html";
+    
 
     $arqu = "TriagemXML/".$id.".xml";
     $labell =['id','idoador','tipoSanguineo','aprovado'];
     XMLLL($labell,$id,$idoador,$tipoSanguineo,$aprovado,$arqu);
-    $local =".Triagem.html";
+
+    $local =$local."Triagem.html";
     header($local);
+    echo $local;
     exit;
 }
-elseif($reprovado == "Reprovado"){
+elseif($aprovado == "Reprovado"){
+
     $arqu = "TriagemXML/".$id.".xml";
-    $labell =['id','idoador','tipoSanguineo','Reprovado'];
-    XMLLL($labell,$id,$idoador,$tipoSanguineo,$reprovado,$arqu);
-    $local =".Triagem.html";
+    $labell =['id','idoador','tipoSanguineo','aprovado'];
+    XMLLL($labell,$id,$idoador,$tipoSanguineo,$aprovado,$arqu);
+
+    $local =$local."Triagem.html";
+    echo $local;
     header($local);
+    /*header("Location: http://localhost/HemoGestor/Triagem.html");*/
     exit;
 }
-$local =".Triagem.html";
-header($local);
+
 }
 else{
     
