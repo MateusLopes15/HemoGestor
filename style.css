@@ -175,8 +175,29 @@ p.menuinfo{
     left: 1%;
 }
 body.menugabrie{
-    background-image: url(./imagens/doandosangueunsplash.jpg);
+    background-image: url(./imagens/doandosangueunsplashblur.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+.banner-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-slide {
+    display: none;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-slide img {
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    margin: 10px;
 }
