@@ -1,0 +1,38 @@
+.container {
+    border: 2px solid #EA5455;
+    padding: 20px;
+    width: 65%;
+    margin: 0 auto;
+    box-shadow: 3px 3px 5px 0px #777;
+    margin-top: 20px;
+    border-radius: 25px;
+    }
+
+              
+table {
+    width: 100%;
+    border-collapse: separate;
+
+    }
+
+              
+th, td {
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #E4DCCF; 
+    background-color: #F9F5EB;
+                
+}
+
+.deletar .alterar {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

@@ -260,37 +260,9 @@ function mostraXML($folder){
          $xml = simplexml_load_file($ler);
          //unlink($ler);
          echo "<html>
+         <link rel='stylesheet' href='style_vizu_doadores.css'>
       <head>
           <title>Informações de Cadastro</title>
-          <style>
-             
-              .container {
-                  border: 2px solid #EA5455;
-                  padding: 20px;
-                  width: 65%;
-                  margin: 0 auto;
-                  box-shadow: 3px 3px 5px 0px #777;
-                  margin-top: 20px;
-                  border-radius: 25px;
-              }
-
-              
-              table {
-                  width: 100%;
-                  border-collapse: separate; /* Separação das bordas das células */
-
-              }
-
-              
-              th, td {
-                color: black;
-                padding: 10px;
-                font-size: 20px;
-                border: 1px solid #E4DCCF; /* Adiciona uma borda suave */
-                background-color: #F9F5EB;
-                
-              }
-          </style>
       </head>";
 echo "<body>
       <div class='container'>
@@ -337,8 +309,8 @@ echo "<body>
                   <td>" . $xml->link->autorizacaoComunicacao . "</td>
               </tr>
           </table>
-          <a href=\"deletarDoador.php?id=".$idArquivo."\"><p>Deletar ".$idArquivo."</p></a><br>
-          <a href=\"alterarDoador.php?id=".$idArquivo."\"><p>Alterar ".$idArquivo."</p></a>
+          <a href=\"deletarDoador.php?id=".$idArquivo."\"> <button class ='deletar'>Deletar "."</button> </a>
+          <a href=\"alterarDoador.php?id=".$idArquivo."\"> <button class ='alterar'>Alterar "." </button></a>
           </div>
           </body>
           </html>";
