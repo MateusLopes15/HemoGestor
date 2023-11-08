@@ -260,58 +260,61 @@ function mostraXML($folder){
          $xml = simplexml_load_file($ler);
          //unlink($ler);
          echo "<html>
-         <link rel='stylesheet' href='style_vizu_doadores.css'>
-      <head>
+          <head>
+          <link rel='stylesheet' href='./style_vizu_doadores.css'>
           <title>Informações de Cadastro</title>
-      </head>";
-echo "<body>
-      <div class='container'>
-          <table>
-              <tr>
+          </head>";
+    echo "<body>
+            <div class='container'>
+              <table>
+                <tr>
                   <th>Nome: </th>
                   <th>D. Nascimento: </th>
 
                   <th>Sexo</th>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                   <td>" . $xml->link->nome . "</td>
                   <td>" . $xml->link->dataNascimento . "</td>
                   <td>" . $xml->link->sexo . "</td>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                   <th>N. Social: </th>
                   <th>Telefone: </th>
                   <th>Email: </th>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                   <td>" . $xml->link->nomeSocial . "</td>
                   <td>" . $xml->link->telefone . "</td>
                   <td>" . $xml->link->email . "</td>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                   <th>N. Mãe: </th>
                   <th>RG: </th>
                   <th>CPF: </th>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                   <td>" . $xml->link->nomeMae . "</td>
                   <td>" . $xml->link->rg . "</td>
                   <td>" . $xml->link->cpf . "</td>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                   <th>T. Doador: </th>
                   <th>T. Sanguíneo: </th>
                   <th>Autorização: </th>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                   <td>" . $xml->link->tipoDoador . "</td>
                   <td>" . $xml->link->tipoSanguineo . "</td>
                   <td>" . $xml->link->autorizacaoComunicacao . "</td>
-              </tr>
-          </table>
-          <a href=\"deletarDoador.php?id=".$idArquivo."\"> <button class ='deletar'>Deletar "."</button> </a>
-          <a href=\"alterarDoador.php?id=".$idArquivo."\"> <button class ='alterar'>Alterar "." </button></a>
-          </div>
+                </tr>
+                </table>
+                <br>
+                <center>
+                <a href='deletarDoador.php?id=".$idArquivo."' class='bonito'> Deletar </a>
+                <a href='alterarDoador.php?id=".$idArquivo."' class='bonito'> Alterar </a>
+                </center>
+                </div>
           </body>
           </html>";
         }

@@ -180,3 +180,15 @@ body.menugabrie{
     background-position: center;
     background-attachment: fixed;
 }
+
+.bonito{
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #EA5455;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

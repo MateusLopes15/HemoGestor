@@ -1,9 +1,12 @@
+body{
+    background-color: #F9F5EB;
+}
 .container {
     border: 2px solid #EA5455;
     padding: 20px;
     width: 65%;
     margin: 0 auto;
-    box-shadow: 3px 3px 5px 0px #777;
+    box-shadow: 3px 3px 5px 0px #E4DCCF;
     margin-top: 20px;
     border-radius: 25px;
     }
@@ -17,22 +20,11 @@ table {
 
               
 th, td {
-    color: black;
+    color: #002B5B;
     padding: 10px;
     font-size: 20px;
-    border: 1px solid #E4DCCF; 
-    background-color: #F9F5EB;
+    border: 1px solid #C4BBAD; 
+    background-color: #E4DCCF;
                 
 }
 
-.deletar .alterar {
-    align-items: center;
-    display: flex;
-    font-weight: bold;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
