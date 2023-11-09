@@ -32,8 +32,8 @@ h2{
     display: flex; 
     align-items: center;
     height: 80px;
-    position: ;
-    z-index: ;
+    position: fixed;
+    z-index: 1;
 }
 #HemogestorTituloEstoque{
     background-color: #EA5455;
@@ -119,14 +119,14 @@ h2{
 .formulário h2{
     color: #002B5B;
     position: relative;
-    top: -32px;
+    top: 30px;
 }
 .formulário label{
     color: #002B5B;
 }
 .formulário2{
     position: relative;
-    top: -40px;
+    top: 10px;
 }
 .formulário2 form{
     margin: 20px 0;
