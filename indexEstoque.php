@@ -14,20 +14,16 @@ echo"
 </head>
 <header class='HemogestorTitulo' id='HemogestorTituloEstoque'>
     <div class='HemogestorTitulo'>
-        <span class='material-symbols-outlined'>
-            bloodtype
-            </span>
-            <h1>
-            Hemogestor</h1>
+        <span class='material-symbols-outlined'>bloodtype</span>
+        <h1>Hemogestor</h1>
         <ul>
-        <li><a href='./Menu.html'>Menu</a></li>
-        <li><a href='./DoadorFront.html'>Doadores</a></li>
-        <li><a href='./indexEstoque.php'>Estoque</a></li>
-        <li><a href='./Triagem.html'>Triagem</a></li>
-        <li><a href='./Relatorio.html'>Relatório</a></li>
+            <li><a href='./Menu.html'>Menu</a></li>
+            <li><a href='./DoadorFront.html'>Doadores</a></li>
+            <li><a href='./indexEstoque.php'>Estoque</a></li>
+            <li><a href='./Triagem.html'>Triagem</a></li>
+            <li><a href='./Relatorio.html'>Relatório</a></li>
         </ul>
     </div>
-
 </header>";
 //echo "<meta HTTP-EQUIV='refresh' CONTENT='5;URL=index_s.php'>";
 
