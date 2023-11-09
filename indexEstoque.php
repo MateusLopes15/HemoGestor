@@ -32,7 +32,7 @@ echo"
 echo"
 <style>
 button {
-    background-color: #EA5455;
+    background-color: #A62631;
     color: #fff;
     padding: 10px 20px;
     border: none;

@@ -13,6 +13,7 @@
     bloodtype, health_metrics, blood_pressure, hematology
     </span>
 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *{
     font-family: 'Roboto', sans-serif;
 }
@@ -21,13 +22,14 @@ html{
 }
 body{
     margin: 0;
+    background: #d5d5d5;
 }
 h2{
     text-align: center;
     color: #002B5B;
 }
 .HemogestorBarraSuperior{
-    background-color: #EA5455;
+    background-color: #A62631;
     display: flex;;
     height: 50px;
     width: 100%;
@@ -37,12 +39,12 @@ h2{
     z-index: 1;
 }
 .HemogestorBarraSuperior .material-symbols-outlined{
-    color: #E4DCCF;
+    color: #E5E5E5;
     font-size: 32px;
 }
 .HemogestorBarraSuperior h1{
     font-size: 32px;
-    color: #E4DCCF;
+    color: #E5E5E5;
     position: absolute;
     left: 36px;
     top: -14px;
@@ -53,11 +55,11 @@ h2{
 }
 .HemogestorBarraSuperior li{
     display: inline;
-    color: #E4DCCF;
+    color: #E5E5E5;
     padding: 20px;
 }
 .HemogestorBarraSuperior a{
-    color: #E4DCCF;
+    color: #E5E5E5;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -95,13 +97,10 @@ h2{
 .Menu {
     background-color: #E4DCCF;
 }
-.Doadores, .Estoque{
-    background: #C4BBAD;
-}
 .formulário{
     width: 50%;
     margin: 0 auto;
-    background: #E4DCCF;
+    background: #D9D9D9;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -132,13 +131,13 @@ input[type="password"],
 input[type="tel"],
 input[type="date"],
 input[type="number"]{
-    width: 99%;
+    width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 input[type="submit"], button {
-    background-color: #EA5455;
+    background-color: #A62631;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -186,7 +185,7 @@ body.menugabrie{
     margin: 10px;
     text-align: center;
     text-decoration: none;
-    background-color: #EA5455;
+    background-color:#A62631;
     color: #fff;
     padding: 10px 15px;
     border: none;
