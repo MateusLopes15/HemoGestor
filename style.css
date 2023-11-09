@@ -29,8 +29,8 @@ h2{
     color: #002B5B;
 }
 .HemogestorTitulo{
-    background-color: #EA5455;
-    color: #E4DCCF;
+    background-color: #A62631;
+    color: #D9D9D9;
     display: flex; 
     align-items: center;
     height: 80px;
@@ -38,14 +38,14 @@ h2{
     z-index: 1;
 }
 #HemogestorTituloEstoque{
-    background-color: #EA5455;
-    color: #E4DCCF;
+    background-color: #A62631;
+    color: #D9D9D9;
     display: flex; 
     align-items: center;
     height: 40px;
 }
 .HemogestorTitulo .material-symbols-outlined{
-    color: #E4DCCF;
+    color: #D9D9D9;
     margin-left: 10px;
     font-size: 32px;
 }
@@ -84,7 +84,7 @@ h2{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #EA5455;
+    background-color: #A62631;
     text-align: center;
 }
 
@@ -102,10 +102,10 @@ h2{
 }
 
 .Menu li a:hover {
-    background-color: #C4BBAD;
+    background-color: #D9D9D9;
 }
 .Menu {
-    background-color: #E4DCCF;
+    background-color: #D9D9D9;
 }
 .formulário{
     width: 50%;
@@ -172,13 +172,13 @@ h1.menuinfo{
     font-size: 84px;
     position: absolute;
     bottom: 120px;
-    color: #F9F5EB;
+    color: #D9D9D9;
     left: 1%;
 }
 p.menuinfo{
     font-size: x-large;
     position: absolute;
-    color: #F9F5EB;
+    color: #D9D9D9;
     width: 800px;
     bottom: 20px;
     left: 1%;
