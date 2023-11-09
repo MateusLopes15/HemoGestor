@@ -28,45 +28,55 @@ h2{
     text-align: center;
     color: #002B5B;
 }
-.HemogestorBarraSuperior{
-    background-color: #A62631;
-    display: flex;;
-    height: 50px;
-    width: 100%;
-}
-.HemogestorBarraSuperior div{
+.HemogestorTitulo{
+    background-color: #EA5455;
+    color: #E4DCCF;
+    display: flex; 
+    align-items: center;
+    height: 80px;
     position: fixed;
     z-index: 1;
 }
-.HemogestorBarraSuperior .material-symbols-outlined{
-    color: #E5E5E5;
+#HemogestorTituloEstoque{
+    background-color: #EA5455;
+    color: #E4DCCF;
+    display: flex; 
+    align-items: center;
+    height: 40px;
+}
+.HemogestorTitulo .material-symbols-outlined{
+    color: #E4DCCF;
+    margin-left: 10px;
     font-size: 32px;
 }
-.HemogestorBarraSuperior h1{
-    font-size: 32px;
-    color: #E5E5E5;
-    position: absolute;
-    left: 36px;
-    top: -14px;
+
+.HemogestorTitulo h1 {
+    margin-left: 10px;
 }
-.HemogestorBarraSuperior ul{
-    position: relative;
-    left: 160px;
+  
+.HemogestorTitulo ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
 }
-.HemogestorBarraSuperior li{
-    display: inline;
-    color: #E5E5E5;
-    padding: 20px;
+
+.HemogestorTitulo li {
+    display:inline;
+    margin: 0 20px;
+    padding: 10px 20px;
 }
-.HemogestorBarraSuperior a{
-    color: #E5E5E5;
+
+.HemogestorTitulo a{
+    color: #E4DCCF;
     text-decoration: none;
-    transition: color 0.3s;
 }
-.HemogestorBarraSuperior a:hover {
+.HemogestorTitulo a:hover {
     color: #002B5B;
 }
-.HemogestorBarraSuperior span{
+.HemogestorTitulo div{
+    width: 100%;
+}
+.Hemogestor span{
     position: relative;
     top: 10px;
 }
@@ -108,14 +118,14 @@ h2{
 .formulário h2{
     color: #002B5B;
     position: relative;
-    top: -32px;
+    top: 30px;
 }
 .formulário label{
     color: #002B5B;
 }
 .formulário2{
     position: relative;
-    top: -40px;
+    top: 10px;
 }
 .formulário2 form{
     margin: 20px 0;

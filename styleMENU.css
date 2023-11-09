@@ -27,23 +27,23 @@ body{
     font-size: 32px;
 }
 
-h1 {
+.HemogestorTitulo h1 {
     margin-left: 10px;
 }
   
-ul {
+.HemogestorTitulo ul {
     list-style: none;
     padding: 0;
     text-align: center;
 }
 
-li {
+.HemogestorTitulo li {
     display:inline;
     margin: 0 20px;
     padding: 10px 20px;
 }
 
-a{
+.HemogestorTitulo a{
     color: #E4DCCF;
     text-decoration: none;
 }
