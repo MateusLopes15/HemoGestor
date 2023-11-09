@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d5d5d5;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.HemogestorTitulo{
+    background-color: #A62631;
+    color: #D9D9D9;
+    display: flex; 
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    z-index: 1;
+}
+
+.HemogestorTitulo .material-symbols-outlined{
+    color: #D9D9D9;
+    margin-left: 10px;
+    font-size: 32px;
+}
+
+.HemogestorTitulo h1 {
+    margin-left: 10px;
+}
+  
+.HemogestorTitulo ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.HemogestorTitulo li {
+    display:inline;
+    margin: 0 20px;
+    padding: 10px 20px;
+}
+
+.HemogestorTitulo a{
+    color: #D9D9D9;
+    text-decoration: none;
+}
+.HemogestorTitulo a:hover {
+    color: #002B5B;
+}
+.HemogestorTitulo div{
+    width: 100%;
+}
+.Hemogestor span{
+    position: relative;
+    top: 10px;
+}
+
+.slidefoto {
+    max-width: auto;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slidefoto img {
+    max-width: auto;
+    height: auto;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.texto {
+    font-size: 30px;
+    text-align: justify;
+    position: absolute;
+    background-color: #A62631;
+    top: 40%;
+    left: 28%;
+    transform: translate(-20%, -20%);
+    color: #D9D9D9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.texto:hover {
+    color: #ffffff;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.caixas {
+    font-size: 25px;
+    margin-top: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 20px;
+    padding: 60px 13.5%;
+}
+
+.caixas p{
+    font-size: 25px;
+    text-align: justify;
+    margin-top: -100px;
+    margin-left: 11%;
+}
+
+.caixa {
+    margin-top: 30px;
+    width: 130px;
+    height: 100px;
+    background-color: #A62631;
+    color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #A62631;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.redes-sociais {
+    margin-top: 20px;
+}
+
+.redes-sociais a {
+    display: inline-block;
+    margin: 10px 10px;
+    text-decoration: none;
+}
+
+.redes-sociais img {
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .HemogestorTitulo {
+        height: auto;
+        position: relative;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .HemogestorTitulo h1 {
+        margin-left: 0;
+    }
+
+    .HemogestorTitulo .material-symbols-outlined {
+        margin-left: 0;
+    }
+
+    .HemogestorTitulo ul {
+        text-align: center;
+        display: block;
+        position: relative;
+        top: 0;
+        margin-top: 10px;
+    }
+
+    .HemogestorTitulo li {
+        display: block;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .slidefoto {
+        height: auto;
+    }
+
+    .texto {
+        font-size: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .caixas {
+        margin-top: 5%;
+        padding: 20px 5%;
+    }
+
+    .caixas p {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .redes-sociais a {
+        display: block;
+        margin: 10px auto;
+    }
+}
