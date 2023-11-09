@@ -35,17 +35,20 @@ h2{
 .HemogestorBarraSuperior div{
     position: fixed;
     z-index: 1;
+    padding: 15px;
 }
 .HemogestorBarraSuperior .material-symbols-outlined{
     color: #E4DCCF;
     font-size: 32px;
+    right: 5px;
+    top: 7px;
 }
 .HemogestorBarraSuperior h1{
     font-size: 32px;
     color: #E4DCCF;
     position: absolute;
-    left: 36px;
-    top: -14px;
+    left: 50px;
+    top: -1px;
 }
 .HemogestorBarraSuperior ul{
     position: relative;
