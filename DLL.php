@@ -145,7 +145,7 @@ function formularioAlterarDoador($caminhoArquivo){
               <meta charset=\"UTF-8\">
               <form class=\"formulário2\" action=\"salvaAlteracaoDoador.php\" method=\"post\">
                 <label for=\"registro\">Registro:</label>
-                <input type=\"text\" id=\"registro\" name=\"registro\" required value=\"".substr(substr($caminhoArquivo,4),0,16)."\" disabled><br><br>
+                <input type=\"text\" id=\"registro\" name=\"registro\" required value=\"".substr(substr($caminhoArquivo,4),0,16)."\" readonly style= \"color:grey\"><br><br>
 
                   <label for=\"nome\">Nome:</label>
                   <input type=\"text\" id=\"nome\" name=\"nome\" required value=\"".$xml->link->nome."\"><br><br>
