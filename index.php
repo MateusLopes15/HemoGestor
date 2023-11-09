@@ -15,7 +15,7 @@ echo   "<head>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
 </head>
 <body>
-<header class='HemogestorBarraSuperior'>
+<header class='HemogestorTitulo'>
     <div style='display: flex; align-items: center;'>
         <span class='material-symbols-outlined' style='font-size: 32px;'>Bloodtype</span>
         <h1 style='margin-left: 10px;'>Hemogestor</h1>
