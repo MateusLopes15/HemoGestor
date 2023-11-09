@@ -135,7 +135,7 @@ function formularioAlterarDoador($caminhoArquivo){
                   <li><a href=\"./DoadorFront.html\">Doadores</a></li>
                   <li><a href=\"./AdEstoque.html\">Estoque</a></li>
                   <li><a href=\"./Triagem.html\">Triagem</a></li>
-                  <li><a href=\"./Relatório.html\">Relatório</a></li>
+                  <li><a href=\"./Relatorio.html\">Relatório</a></li>
                   </ul>
               </div>
           </header>
@@ -244,6 +244,19 @@ function formularioAlterarDoador($caminhoArquivo){
         }
       //}
     //}
+  }
+}
+
+function listaBolsa(){
+  include "cons.php";
+
+  $caminhoArquivo = 'xmll/dados.xml24';
+  if ($handle = opendir('xmll')) {
+    $ler = $caminhoArquivo;
+    if ($ler != NULL){
+      $xml = simplexml_load_file($ler);
+      return $xml;
+    }
   }
 }
 

@@ -22,7 +22,7 @@ echo"
         <li><a href='./DoadorFront.html'>Doadores</a></li>
         <li><a href='./indexEstoque.php'>Estoque</a></li>
         <li><a href='./Triagem.html'>Triagem</a></li>
-        <li><a href='./Relatório.html'>Relatório</a></li>
+        <li><a href='./Relatorio.html'>Relatório</a></li>
         </ul>
     </div>
 
