@@ -1,18 +1,161 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        :root {
+            --color-light-50: #f8fafc;
+            --color-dark-50: #797984;
+            --color-dark-100: #312d37;
+            --color-dark-900: #000;
+        
+        }
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--color-light-50);
+        }
+        #login_form {
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            background-color: #cde9ca;
+            padding: 30px 40px;
+            border-radius: 8px;
+            gap: 30px;
+            box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+            animation: dark-to-light-background 0.3s ease-in-out;
+        }
+        #form_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #form_header h1 {
+            font-size: 60px;
+            position: relative;
+        }
+        #form_header h1::before {
+            position: absolute;
+            content: '';
+            width: 40%;
+            height: 3px;
+            background-color: red;
+            bottom: 10px;
+            border-radius: 5px;
+        }
+        #inputs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .input_box>label {
+            font-size: 20px;
+            color: black;
+            margin: 25px;
+        }
+        
+        .input_field {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 3px;
+            border-bottom: 1px solid black;
+            cursor: text;
+            margin: 25px;
+        }
+        
+        .input_field i {
+            font-size: 18px;
+            cursor: text;
+            color: black;
+        } 
+        
+        .input_field input {
+            border: none;
+            width: 260px;
+            background-color: transparent;
+            font-size: 18px;
+            padding: 0px 5px;
+        }
+        
+        .input_field input:focus {
+            outline: none;
+        }
+        #forgot_password a {
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+        }
+        
+        #forgot_password a:hover {
+            color: black;
+        }
+        #login_button {
+            width: 20vw;
+            height: 5vh;
+            border: none;
+            background: red;
+            padding: 7px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        #login_button:hover {
+            transform: scale(1.05);
+        }
+        
+    </style>
 <head>
     <title>Página de Login</title>
 </head>
 <body>
-    <h2>Faça login</h2>
-    <form action="validaUsuario.php" method="post">
-        <label for="nomeUsuario">Nome de Usuário:</label>
-        <input type="text" id="nomeUsuario" name="nomeUsuario" required><br><br>
-        
-        <label for="senha">Senha:</label>
-        <input type="senha" id="senha" name="senha" required><br><br>
-        
-        <input type="submit" value="Login">
-    </form>
+    <main id="container">
+        <form action="validaUsuario.php" method="post" id="login_form">
+            <div id="form_header">
+                <h1>Login</h1>
+            </div>
+                <div id="inputs">
+                    <div class="input_box">
+                        <label for="nomeUsuario">
+                            Nome Usuario
+                            <div class="input_field">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="nomeUsuario" name="nomeUsuario" required>
+                            </div>
+                        </label>
+                        
+                        <div class="input_box">
+                            <label for="password">
+                                Password
+                                <div class="input_field">
+                                    <i class="fa-solid fa-key"></i>
+                                    <input type="password" id="password" name="password">
+                                </div>
+                            </label>
+                </div>
+                <center>
+                <button type="submit" id="login_button">
+                    Login
+                </button>
+                </center>
+            </form>
+    </main>
+    </div>
 </body>
 </html>
