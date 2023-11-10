@@ -329,6 +329,7 @@ function mostraXML($folder){
                     <a href='alterarDoador.php?id=".$idArquivo."' class='bonito'> Alterar </a>
                     </center>
                     </div>
+                    <br>
               </body>
               </html>";
         }
