@@ -136,7 +136,7 @@ function formularioAlterarDoador($caminhoArquivo){
                   <li><a href=\"./DoadorFront.html\">Doadores</a></li>
                   <li><a href=\"./AdEstoque.html\">Estoque</a></li>
                   <li><a href=\"./Triagem.html\">Triagem</a></li>
-                  <li><a href=\"./Relatório.html\">Relatório</a></li>
+                  <li><a href=\"./Relatorio.html\">Relatório</a></li>
                   </ul>
               </div>
           </header>
@@ -248,6 +248,19 @@ function formularioAlterarDoador($caminhoArquivo){
   }
 }
 
+function listaBolsa(){
+  include "cons.php";
+
+  $caminhoArquivo = 'xmll/dados.xml24';
+  if ($handle = opendir('xmll')) {
+    $ler = $caminhoArquivo;
+    if ($ler != NULL){
+      $xml = simplexml_load_file($ler);
+      return $xml;
+    }
+  }
+}
+
 function mostraXML($folder){
   include "cons.php";
  // Listar XMLs da pasta
@@ -265,59 +278,59 @@ function mostraXML($folder){
           <link rel='stylesheet' href='./style_vizu_doadores.css'>
           <title>Informações de Cadastro</title>
           </head>";
-    echo "<body>
-            <div class='container'>
-              <table>
-                <tr>
-                  <th>Nome: </th>
-                  <th>D. Nascimento: </th>
+        echo "<body>
+                <div class='container'>
+                  <table>
+                    <tr>
+                      <th>Nome: </th>
+                      <th>D. Nascimento: </th>
 
-                  <th>Sexo</th>
-                </tr>
-                <tr>
-                  <td>" . $xml->link->nome . "</td>
-                  <td>" . $xml->link->dataNascimento . "</td>
-                  <td>" . $xml->link->sexo . "</td>
-                </tr>
-                <tr>
-                  <th>N. Social: </th>
-                  <th>Telefone: </th>
-                  <th>Email: </th>
-                </tr>
-                <tr>
-                  <td>" . $xml->link->nomeSocial . "</td>
-                  <td>" . $xml->link->telefone . "</td>
-                  <td>" . $xml->link->email . "</td>
-                </tr>
-                <tr>
-                  <th>N. Mãe: </th>
-                  <th>RG: </th>
-                  <th>CPF: </th>
-                </tr>
-                <tr>
-                  <td>" . $xml->link->nomeMae . "</td>
-                  <td>" . $xml->link->rg . "</td>
-                  <td>" . $xml->link->cpf . "</td>
-                </tr>
-                <tr>
-                  <th>T. Doador: </th>
-                  <th>T. Sanguíneo: </th>
-                  <th>Autorização: </th>
-                </tr>
-                <tr>
-                  <td>" . $xml->link->tipoDoador . "</td>
-                  <td>" . $xml->link->tipoSanguineo . "</td>
-                  <td>" . $xml->link->autorizacaoComunicacao . "</td>
-                </tr>
-                </table>
-                <br>
-                <center>
-                <a href='deletarDoador.php?id=".$idArquivo."' class='bonito'> Deletar </a>
-                <a href='alterarDoador.php?id=".$idArquivo."' class='bonito'> Alterar </a>
-                </center>
-                </div>
-          </body>
-          </html>";
+                      <th>Sexo</th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->nome . "</td>
+                      <td>" . $xml->link->dataNascimento . "</td>
+                      <td>" . $xml->link->sexo . "</td>
+                    </tr>
+                    <tr>
+                      <th>N. Social: </th>
+                      <th>Telefone: </th>
+                      <th>Email: </th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->nomeSocial . "</td>
+                      <td>" . $xml->link->telefone . "</td>
+                      <td>" . $xml->link->email . "</td>
+                    </tr>
+                    <tr>
+                      <th>N. Mãe: </th>
+                      <th>RG: </th>
+                      <th>CPF: </th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->nomeMae . "</td>
+                      <td>" . $xml->link->rg . "</td>
+                      <td>" . $xml->link->cpf . "</td>
+                    </tr>
+                    <tr>
+                      <th>T. Doador: </th>
+                      <th>T. Sanguíneo: </th>
+                      <th>Autorização: </th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->tipoDoador . "</td>
+                      <td>" . $xml->link->tipoSanguineo . "</td>
+                      <td>" . $xml->link->autorizacaoComunicacao . "</td>
+                    </tr>
+                    </table>
+                    <br>
+                    <center>
+                    <a href='deletarDoador.php?id=".$idArquivo."' class='bonito'> Deletar </a>
+                    <a href='alterarDoador.php?id=".$idArquivo."' class='bonito'> Alterar </a>
+                    </center>
+                    </div>
+              </body>
+              </html>";
         }
       }
    }
