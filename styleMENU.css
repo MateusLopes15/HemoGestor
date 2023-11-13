@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(imagens/imagem1.png);
+    background-repeat: no-repeat;
+    background-position: 65% 35%;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.HemogestorTitulo{
+    background-color: #A62631;
+    color: #D9D9D9;
+    display: flex; 
+    align-items: center;
+}
+
+.HemogestorTitulo .material-symbols-outlined{
+    color: #D9D9D9;
+    margin-left: 10px;
+    font-size: 32px;
+}
+
+.HemogestorTitulo h1 {
+    margin-left: 10px;
+}
+  
+.HemogestorTitulo ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.HemogestorTitulo li {
+    display:inline;
+    margin: 0 20px;
+    padding: 10px 20px;
+}
+
+.HemogestorTitulo a{
+    color: #E4DCCF;
+    text-decoration: none;
+}
+
+.HemogestorTitulo a:hover {
+    color: #002B5B;
+}
+
+.menu-container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 60px 50px;
+}
+
+.card1 {
+    width: 200px;
+    height: 250px;
+    margin-left: 200px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+    transform: rotate(-10deg)
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    margin: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+    transform: rotate(10deg)
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.card1 img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #A62631;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.redes-sociais {
+    margin-top: 20px;
+}
+
+.redes-sociais a {
+    display: inline-block;
+    margin: 10px 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.redes-sociais img {
+    width: 40px;
+    height: 40px;
+}

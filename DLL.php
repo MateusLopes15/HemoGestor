@@ -23,14 +23,15 @@ function XML($label,$x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8,$x9,$x10,$x11,$x12,$file){
     //$fim = count($label) - 1;
     //$xml .= '<modo>'. $label[$fim].'</modo>';
      $xml .= '</link>';
- // Fechamento da raiz
-   $xml .= '</links>';
- 
- $fp = fopen($file, "w+");
- fwrite($fp, $xml);
- fclose($fp);
+    // Fechamento da raiz
+    $xml .= '</links>';
+    
+    $fp = fopen($file, "w+");
+    fwrite($fp, $xml);
+    fclose($fp);
          
  }
+
  function XMLL($label,$x1,$x2,$x3,$x4,$x5,$x6,$file){
 	
   $xml = '<?xml version="1.0" encoding="utf-8"?>';
@@ -50,51 +51,42 @@ function XML($label,$x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8,$x9,$x10,$x11,$x12,$file){
   //$fim = count($label) - 1;
   //$xml .= '<modo>'. $label[$fim].'</modo>';
    $xml .= '</link>';
-// Fechamento da raiz
- $xml .= '</links>';
+  // Fechamento da raiz
+  $xml .= '</links>';
 
-$fp = fopen($file, "w+");
-fwrite($fp, $xml);
-fclose($fp);
+  $fp = fopen($file, "w+");
+  fwrite($fp, $xml);
+  fclose($fp);
        
 }
-function CriarXML($label,$x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8,$x9,$x10,$x11,$x12,$x13,$x14){
+
+function XMLLL($label,$x1,$x2,$x3,$x4,$file){
+	
   $xml = '<?xml version="1.0" encoding="utf-8"?>';
   $xml .= '<links>';
    $xml .= '<link>';
    if(isset($x1)) $xml .= '<'.$label[0].'>'. $x1 .'</'.$label[0].'>';
    if(isset($x2))$xml .= '<'.$label[1].'>'. $x2.'</'.$label[1].'>';
    if(isset($x3))$xml .= '<'.$label[2].'>'. $x3.'</'.$label[2].'>';
-  if(isset($x4))	$xml .= '<'.$label[3].'>'. $x4.'</'.$label[3].'>';
-   if(isset($x5))$xml .= '<'.$label[4].'>'. $x5.'</'.$label[4].'>';
-   if(isset($x6))$xml .= '<'.$label[5].'>'. $x6.'</'.$label[5].'>';
-   if(isset($x7)) $xml .= '<'.$label[6].'>'. $x7 .'</'.$label[6].'>';
-   if(isset($x8))$xml .= '<'.$label[7].'>'. $x8.'</'.$label[7].'>';
-   if(isset($x9))$xml .= '<'.$label[8].'>'. $x9.'</'.$label[8].'>';
-  if(isset($x10))	$xml .= '<'.$label[9].'>'. $x10.'</'.$label[9].'>';
-   if(isset($x11))$xml .= '<'.$label[10].'>'. $x11.'</'.$label[10].'>';
-   if(isset($x12))$xml .= '<'.$label[11].'>'. $x12.'</'.$label[11].'>';
-   if(isset($x13)) $xml .= '<'.$label[12].'>'. $x13 .'</'.$label[12].'>';
-   if(isset($x14))$xml .= '<'.$label[13].'>'. $x14.'</'.$label[13].'>';
+   if(isset($x4))$xml .= '<'.$label[3].'>'. $x4.'</'.$label[3].'>';
+  
+
+ 
+
+
 
   //$fim = count($label) - 1;
   //$xml .= '<modo>'. $label[$fim].'</modo>';
    $xml .= '</link>';
   // Fechamento da raiz
   $xml .= '</links>';
-  return $xml;
-}
-function CriaArquivoXML($xml,$caminhoArquivo){
-  $fp = fopen($caminhoArquivo, "w+");
+
+  $fp = fopen($file, "w+");
   fwrite($fp, $xml);
   fclose($fp);
+        
 }
-function DeletaArquivo($caminhoArquivo){
-  $arquivo = fopen($caminhoArquivo, "r");
-  if(isset($arquivo)){
-    unlik($caminhoArquivo);
-  }
-}
+
  function contar($arq){
     $fp = fopen($arq, "r");
     $c = fgets($fp,1000);
@@ -106,6 +98,278 @@ function DeletaArquivo($caminhoArquivo){
  return $c;
 }
 
+function deletarRegistro($caminhoArquivo){
+  $status = unlink($caminhoArquivo);
+  return $status;
+}
+
+function formularioAlterarDoador($caminhoArquivo){
+  include "cons.php";
+  // Listar XMLs da pasta
+  if ($handle = opendir('xml')) {
+    //if (false !== ($entry = readdir($handle))) {
+      //if ($entry != "." && $entry != "..") {
+        $ler = $caminhoArquivo;
+        if ($ler != NULL){
+          $xml = simplexml_load_file($ler);
+          
+          echo "<html class=\"Doadores\">
+          <head>
+              <meta charset=\"UTF-8\">
+              <title>Formulário de Cadastro</title>
+              <link rel='stylesheet' href='./style_vizu_doadores.css'>
+              <link rel=\"stylesheet\" href=\"./style.css\">
+              <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+              <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+              <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap\" rel=\"stylesheet\">
+              <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200\" />
+            
+          </head>
+          <header class=\"HemogestorTitulo\">
+              <div class=\"HemogestorTitulo\">
+                  <span class=\"material-symbols-outlined\">
+                      bloodtype
+                      </span>
+                  <h1>HemoGestor</h1>
+                  <ul>
+                  <li><a href=\"./Menu.html\">Menu</a></li>
+                  <li><a href=\"./DoadorFront.html\">Doadores</a></li>
+                  <li><a href=\"./AdEstoque.html\">Estoque</a></li>
+                  <li><a href=\"./Triagem.html\">Triagem</a></li>
+                  <li><a href=\"./Relatorio.html\">Relatório</a></li>
+                  </ul>
+              </div>
+          </header>
+          <body>
+              <div class=\"formulário\">
+              <center><h2>Formulário de Cadastro de Doadores</h2></center>
+              <meta charset=\"UTF-8\">
+              <form class=\"formulário2\" action=\"salvaAlteracaoDoador.php\" method=\"post\">
+                <label for=\"registro\">Registro:</label>
+                <input type=\"text\" id=\"registro\" name=\"registro\" required value=\"".substr(substr($caminhoArquivo,4),0,16)."\" readonly style= \"color:grey\"><br><br>
+
+                  <label for=\"nome\">Nome:</label>
+                  <input type=\"text\" id=\"nome\" name=\"nome\" required value=\"".$xml->link->nome."\"><br><br>
+          
+                  <label for=\"nomeMae\">Nome da Mãe:</label>
+                  <input type=\"text\" id=\"nomeMae\" name=\"nomeMae\" required value=\"".$xml->link->nomeMae."\"><br><br>
+          
+                  <label for=\"email\">Email:</label>
+                  <input type=\"email\" id=\"email\" name=\"email\" required value=\"".$xml->link->email."\"><br><br>
+          
+                  <label for=\"nomeSocial\">Nome Social:</label>
+                  <input type=\"text\" id=\"nomeSocial\" name=\"nomeSocial\" value=\"".$xml->link->nomeSocial."\"><br><br>
+          
+                  <label for=\"telefone\">Número de Telefone:</label>
+                  <input type=\"tel\" id=\"telefone\" name=\"telefone\" value=\"".$xml->link->telefone."\"><br><br>
+          
+                  <label for=\"cpf\">CPF:</label>
+                  <input type=\"text\" id=\"cpf\" name=\"cpf\" required value=\"".$xml->link->cpf."\"><br><br>
+          
+                  <label for=\"rg\">RG:</label>
+                  <input type=\"text\" id=\"rg\" name=\"rg\" required value=\"".$xml->link->rg."\"><br><br>
+          
+                  <label for=\"dataNascimento\">Data de Nascimento:</label>
+                  <input type=\"date\" id=\"dataNascimento\" name=\"dataNascimento\" required value=\"".$xml->link->dataNascimento."\"><br><br>
+          
+                  <label>Sexo:</label>
+                  <input type=\"radio\" id=\"feminino\" name=\"sexo\" value=\"Feminino\"";
+                  if ($xml->link->sexo == "Feminino"){echo "checked";};
+                  echo ">
+                  <label for=\"feminino\">Feminino</label><br>
+          
+                  <input type=\"radio\" id=\"masculino\" name=\"sexo\" value=\"Masculino\"";
+                  if ($xml->link->sexo == "Masculino"){echo "checked";};
+                  echo ">
+                  <label for=\"masculino\">Masculino</label><br><br>
+          
+                  <label for=\"tipoDoador\">Tipo de Doador:</label>
+                  <select id=\"tipoDoador\" name=\"tipoDoador\" required>
+                      <option value=\"Doador de Campanha\"";
+                      if ($xml->link->tipoDoador == "Doador de Campanha"){echo "selected";};
+                      echo ">Doador de Campanha</option>
+                      <option value=\"Doador Esporádico\"";
+                      if ($xml->link->tipoDoador == "Doador Esporádico"){echo "selected";};
+                      echo ">Doador Esporádico</option>
+                      <option value=\"Doador Recorrente\"";
+                      if ($xml->link->tipoDoador == "Doador Recorrente"){echo "selected";};
+                      echo ">Doador Recorrente</option>
+                  </select><br><br>
+          
+                  <label for=\"tipoSanguineo\">Tipo Sanguíneo:</label>
+                  <select id=\"tipoSanguineo\" name=\"tipoSanguineo\" required>
+                      <option value=\"A+\"";
+                      if ($xml->link->tipoSanguineo == "A+"){echo "selected";};
+                      echo ">A+</option>
+                      <option value=\"A-\"";
+                      if ($xml->link->tipoSanguineo == "A-"){echo "selected";};
+                      echo ">A-</option>
+                      <option value=\"B+\"";
+                      if ($xml->link->tipoSanguineo == "B+"){echo "selected";};
+                      echo ">B+</option>
+                      <option value=\"B-\"";
+                      if ($xml->link->tipoSanguineo == "B-"){echo "selected";};
+                      echo ">B-</option>
+                      <option value=\"AB+\"";
+                      if ($xml->link->tipoSanguineo == "AB+"){echo "selected";};
+                      echo ">AB+</option>
+                      <option value=\"AB-\"";
+                      if ($xml->link->tipoSanguineo == "AB-"){echo "selected";};
+                      echo ">AB-</option>
+                      <option value=\"O+\"";
+                      if ($xml->link->tipoSanguineo == "O+"){echo "selected";};
+                      echo ">O+</option>
+                      <option value=\"O-\"";
+                      if ($xml->link->tipoSanguineo == "O-"){echo "selected";};
+                      echo ">O-</option>
+                  </select><br><br>
+          
+                  <label for=\"autorizacaoComunicacao\">Autorizar Comunicação:</label><br>
+                  <input type=\"checkbox\" id=\"autorizacaoComunicacao\" name=\"autorizacaoComunicacao\" value=\"Sim\"";
+                  if ($xml->link->autorizacaoComunicacao == "Sim"){echo "checked";};
+                  echo ">
+                  <label for=\"autorizacaoComunicacao\">Sim, autorizo a comunicação</label><br><br>
+          
+                  <input type=\"submit\" value=\"Enviar\">
+                  
+              </form>
+          <center>
+              <a class=\"bb\" href='index.php'>
+                  <button>Visualizar Doadores</button>
+              </a>
+          </center>
+          </div>
+          </body>
+          </html>
+          ";
+        }
+      //}
+    //}
+  }
+}
+
+function GetAllDadosDoador(){
+  include "cons.php";
+  $folder = 'XML';
+   if ($handle = opendir('XML')) {
+    //array para arquivo
+    $doadores = array(
+      array('id','Nome Doador', 'e-mail', 'Nome Social', 'Telefone', 'CPF', 'Sexo', 'Data nascimento', 'Tipo Sanguineo', 'Tipo de Doador', 'Autoriza Comunicação')
+    );
+     while (false !== ($entry = readdir($handle))) {
+       if ($entry != "." && $entry != "..") {
+         $ler = $folder . '/' . $entry;
+         $idArquivo = substr($entry,0,16);
+         if ($ler != NULL){
+           $xml = simplexml_load_file($ler);
+  
+           //preenche array para arquivo
+           $doador = array($idArquivo, $xml->link->nome, $xml->link->email, $xml->link->nomeSocial, $xml->link->telefone, $xml->link->cpf, $xml->link->sexo, $xml->link->dataNascimento, $xml->link->tipoSanguineo, $xml->link->tipoDoador, $xml->link->autorizaComunicacao);
+           array_push($doadores, $doador); 
+          }
+        }
+      }
+    }
+    return $doadores;
+} 
+
+function GetAllEstoque(){
+  $folder = 'XMLSangue';
+  if ($handle = opendir('XMLSangue')) {
+   //array para arquivo
+   $estoqueSangue = array(
+     array('Tipo Sanguineo', 'Plaquetas', 'Hemacias', 'Plasma', 'Crioprecipitados', 'Granulocitos')
+   );
+    while (false !== ($entry = readdir($handle))) {
+      if ($entry != "." && $entry != "..") {
+        $ler = $folder . '/' . $entry;
+        $idArquivo = substr($entry,0,16);
+        if ($ler != NULL){
+          $xml = simplexml_load_file($ler);
+ 
+          //preenche array para arquivo
+          $estoque = array($xml->link->tipoSanguineo, $xml->link->plaquetas, $xml->link->hemacias, $xml->link->plasma, $xml->link->crioprecipitado, $xml->link->granulocitos);
+          array_push($estoqueSangue, $estoque); 
+         }
+       }
+     }
+  }
+  return $estoqueSangue;
+}
+
+function GetAllTriagem(){
+  include "cons.php";
+  $folder = 'TriagemXML';
+   if ($handle = opendir('TriagemXML')) {
+    //array para arquivo
+    $traigemAll = array(
+      array('idDoador', 'Aprovado', 'idTriagem')
+    );
+     while (false !== ($entry = readdir($handle))) {
+       if ($entry != "." && $entry != "..") {
+         $ler = $folder . '/' . $entry;
+         //$idArquivo = substr($entry,0,16);
+         if ($ler != NULL){
+           $xml = simplexml_load_file($ler);
+  
+           //preenche array para arquivo
+           $triagem = array($xml->link->idoador, $xml->link->aprovado,  $xml->link->id);
+           array_push($traigemAll, $triagem); 
+          }
+        }
+      }
+    }
+    return $traigemAll;
+} 
+
+function RelatorioAnalitico(){
+  include "cons.php";
+  $todosDoadores = GetAllDadosDoador();
+  $todosTriagem = GetAllTriagem();
+  $itemsRelatorio = array(array('idTriagem', 'Aprovado','Nome Doador', 'e-mail', 'Nome Social', 'Telefone', 'CPF', 'Sexo', 'Data nascimento', 'Tipo Sanguineo', 'Tipo de Doador', 'Autoriza Comunicação'));
+  //cria arquivo
+  foreach ($todosDoadores as $doador) {
+    foreach($todosTriagem as $triagem){
+      if($doador[0] == $triagem[0]){
+        $TriagemDoador = array($triagem[2], $triagem[1], $doador[1], $doador[2], $doador[3], $doador[4], $doador[5], $doador[6], $doador[7], $doador[8], $doador[9]);
+        array_push($itemsRelatorio, $TriagemDoador); 
+      }
+    }
+  }
+
+  //cria arquivo
+  $fp = fopen('relatorio.csv', 'w');
+  foreach ($itemsRelatorio as $item) {
+    fputcsv($fp, $item);
+  }
+  fclose($fp);
+
+  //download arquivo
+  header("Content-type: application/x-file-to-save"); 
+  header("Content-Disposition: attachment; filename=\"relatorio.csv\"");
+  ob_end_clean();
+  readfile('relatorio.csv');
+}
+
+function RelatorioSintetico(){
+  include "cons.php";
+  $todosEstoque = GetAllEstoque();
+
+  //cria arquivo
+  $fp = fopen('relatorio.csv', 'w');
+  foreach ($todosEstoque as $sangue) {
+    fputcsv($fp, $sangue);
+  }
+  fclose($fp);
+
+  //download arquivo
+  header("Content-type: application/x-file-to-save"); 
+  header("Content-Disposition: attachment; filename=\"relatorio.csv\"");
+  ob_end_clean();
+  readfile('relatorio.csv');
+}
+
+
 function mostraXML($folder){
   include "cons.php";
  // Listar XMLs da pasta
@@ -114,28 +378,105 @@ function mostraXML($folder){
      if ($entry != "." && $entry != "..") {
        // Carregar XML usando o simplexml
        $ler = $folder . '/' . $entry;
+       $idArquivo = substr($entry,0,16);
        if ($ler != NULL){
          $xml = simplexml_load_file($ler);
          //unlink($ler);
-         echo "nome: ".$xml->link->nome."<br/>";
-         echo "Mãe: ".$xml->link->nomeMae."<br/>";
-         echo "email: ".$xml->link->email."<br/>";
-         echo "nomeSocial: ".$xml->link->nomeSocial."<br/>";
-         echo "telefone: ".$xml->link->telefone."<br/>";
-         echo "CPF: ".$xml->link->cpf."<br/>";
-         echo "RG: ".$xml->link->rg."<br/>";
-         echo "Data de Nascimento: ".$xml->link->dataNascimento."<br/>";
-         echo "sexo: ".$xml->link->sexo."<br/>";
-         echo "Tipo de Doador: ".$xml->link->tipoDoador."<br/>";
-         echo "Tipo Sanguíneo: ".$xml->link->tipoSanguineo."<br/>";
-         echo "Autorização: ".$xml->link->autorizacaoComunicacao."<br/>";
-         echo "-------------------------------------------------------------"."</br>";
-       }
+         echo "<html>
+          <head>
+          <link rel='stylesheet' href='./style_vizu_doadores.css'>
+          <title>Informações de Cadastro</title>
+          </head>";
+        echo "<body>
+                <br>
+                <br>
+                <div class='container'>
+                  <table>
+                    <tr>
+                      <th>Nome: </th>
+                      <th>D. Nascimento: </th>
+
+                      <th>Sexo</th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->nome . "</td>
+                      <td>" . $xml->link->dataNascimento . "</td>
+                      <td>" . $xml->link->sexo . "</td>
+                    </tr>
+                    <tr>
+                      <th>N. Social: </th>
+                      <th>Telefone: </th>
+                      <th>Email: </th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->nomeSocial . "</td>
+                      <td>" . $xml->link->telefone . "</td>
+                      <td>" . $xml->link->email . "</td>
+                    </tr>
+                    <tr>
+                      <th>N. Mãe: </th>
+                      <th>RG: </th>
+                      <th>CPF: </th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->nomeMae . "</td>
+                      <td>" . $xml->link->rg . "</td>
+                      <td>" . $xml->link->cpf . "</td>
+                    </tr>
+                    <tr>
+                      <th>T. Doador: </th>
+                      <th>T. Sanguíneo: </th>
+                      <th>Autorização: </th>
+                    </tr>
+                    <tr>
+                      <td>" . $xml->link->tipoDoador . "</td>
+                      <td>" . $xml->link->tipoSanguineo . "</td>
+                      <td>" . $xml->link->autorizacaoComunicacao . "</td>
+                    </tr>
+                    </table>
+                    <br>
+                    <center>
+                    <a href='deletarDoador.php?id=".$idArquivo."' class='bonito'> Deletar </a>
+                    <a href='alterarDoador.php?id=".$idArquivo."' class='bonito'> Alterar </a>
+                    </center>
+                    </div>
+                    <br>
+              </body>
+              </html>";
+        }
       }
    }
-   closedir($handle);
+   closedir($handle); 
  }
 }
+
+function validacaoUsuario($usuario, $senha){
+  $pasta = 'arquivos/usuario';
+  $senhaHash = hash('sha256', $senha);
+
+  if ($handle = opendir($pasta)) {
+    while (false !== ($entry = readdir($handle))) {
+      if ($entry != "." && $entry != "..") {
+        // Carregar XML usando o simplexml
+        $ler = $pasta . '/' . $entry;
+        if ($ler != NULL){
+          $xml = simplexml_load_file($ler);
+          if($xml->link->nomeUsuario == $usuario && $xml->link->senha == $senhaHash){
+            return "Usuario encontrado!";
+          }elseif($xml->link->nomeUsuario != $usuario){
+            return "Usuario nao encontrado!";
+          }elseif($xml->link->nomeUsuario == $usuario && $xml->link->senha != $senhaHash){
+            return "Senha inserida incorreta!";
+          }else{
+            return "Erro ao processar informacoes do login!";
+          }
+        }
+      }
+    }
+   closedir($pasta);
+  }
+}
+
 function mostraXMLL($folder){
   include "cons.php";
  // Listar XMLs da pasta
@@ -159,15 +500,15 @@ function mostraXMLL($folder){
                  }
          
                  header {
-                     background-color: #ff0000;
-                     color: #fff;
+                     
                      text-align: center;
                      padding: 20px 0;
                  }
-         
-                 h1 {
-                     margin: 0;
+                 h1{
+                  margin : 0;
                  }
+
+         
          
                  table {
                      width: 100%;
@@ -178,11 +519,14 @@ function mostraXMLL($folder){
                      border: 1px solid #ccc;
                      padding: 10px;
                      text-align: center;
+                    
                  }
          
                  th {
-                     background-color: #eee;
+                     background-color: #F9F5EB;
                  }
+                 
+                 
          
              </style>
          </head>";
@@ -219,6 +563,14 @@ function mostraXMLL($folder){
    closedir($handle);
  }
 }
+
+function PegarValor($folder){
+  include "cons.php";
+  
+          $xml = simplexml_load_file($folder);
+          return $xml;
+        }
+     
 ?>
 </body>
 </html>

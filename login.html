@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style-Login.css">
+<head>
+    <title>Página de Login</title>
+</head>
+<body>
+    
+    <main id="container">
+        <form action="validaUsuario.php" method="post" id="login_form">
+            <div id="form_header">
+                <h1>Login</h1>
+            </div>
+                <div id="inputs">
+                    <div class="input_box">
+                        <label for="nomeUsuario">
+                            Usuário
+                            <div class="input_field">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="nomeUsuario" name="nomeUsuario" required>
+                            </div>
+                        </label>
+                        
+                        <div class="input_box">
+                            <label for="password">
+                                Senha
+                                <div class="input_field">
+                                    <i class="fa-solid fa-key"></i>
+                                    <input type="password" id="password" name="password">
+                                </div>
+                            </label>
+                </div>
+                <center>
+                <button type="submit" id="login_button">
+                    Login
+                </button>
+                </center>
+            </form>
+    </main>
+    </div>
+</body>
+</html>

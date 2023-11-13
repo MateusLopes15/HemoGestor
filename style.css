@@ -1,0 +1,227 @@
+/* Paleta de cores
+#F9F5EB - Branco
+#E4DCCF - Cinza
+#EA5455 - Vermelho
+#002B5B - Azul
+#C4BBAD - Cinza escuro
+#D74444 - Vermelho escuro
+#D13D3D - Vermelho mais escuro
+
+
+Ícones
+<span class="material-symbols-outlined">
+    bloodtype, health_metrics, blood_pressure, hematology
+    </span>
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    margin: 0;
+    background: #d5d5d5;
+}
+h2{
+    text-align: center;
+    color: #002B5B;
+}
+.HemogestorTitulo{
+    background-color: #A62631;
+    color: #D9D9D9;
+    display: flex; 
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    z-index: 1;
+}
+#HemogestorTituloEstoque{
+    background-color: #A62631;
+    color: #D9D9D9;
+    display: flex; 
+    align-items: center;
+    height: 40px;
+}
+.HemogestorTitulo .material-symbols-outlined{
+    color: #D9D9D9;
+    margin-left: 10px;
+    font-size: 32px;
+}
+
+.HemogestorTitulo h1 {
+    margin-left: 10px;
+}
+  
+.HemogestorTitulo ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.HemogestorTitulo li {
+    display:inline;
+    margin: 0 20px;
+    padding: 10px 20px;
+}
+
+.HemogestorTitulo a{
+    color: #E4DCCF;
+    text-decoration: none;
+}
+.HemogestorTitulo a:hover {
+    color: #002B5B;
+}
+.HemogestorTitulo div{
+    width: 100%;
+}
+.Hemogestor span{
+    position: relative;
+    top: 10px;
+}
+.Menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #A62631;
+    text-align: center;
+}
+
+.Menu li {
+    display: inline;
+}
+
+.Menu li a {
+    display: block;
+    color: #002B5B;
+    text-align: center;
+    padding: 56px 64px;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.Menu li a:hover {
+    background-color: #D9D9D9;
+}
+.Menu {
+    background-color: #D9D9D9;
+}
+.formulário{
+    width: 50%;
+    margin: 0 auto;
+    background: #D9D9D9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.formulário h2{
+    color: #002B5B;
+    position: relative;
+    top: 30px;
+}
+.formulário label{
+    color: #002B5B;
+}
+.formulário2{
+    position: relative;
+    top: 10px;
+}
+.formulário2 form{
+    margin: 20px 0;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"]{
+    width: 99%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"], button {
+    background-color: #A62631;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+label[for="feminino"], label[for="masculino"]{
+    display: inline-block;
+    margin-right: 10px;
+}
+#tipoDoador, #tipoSanguineo{
+    width: 102%;
+    padding: 10px;
+    border: 1px solid#ccc;
+    border-radius: 4px;
+}
+label[for="autorizacaoComunicacao"]{
+    display: inline-block;
+    margin-right: 1px;
+}
+h1.menuinfo{
+    font-size: 84px;
+    position: absolute;
+    bottom: 120px;
+    color: #D9D9D9;
+    left: 1%;
+}
+p.menuinfo{
+    font-size: x-large;
+    position: absolute;
+    color: #D9D9D9;
+    width: 800px;
+    bottom: 20px;
+    left: 1%;
+}
+body.menugabrie{
+    background-image: url(./imagens/doandosangueunsplashblur.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.bonito{
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color:#A62631;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.banner-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-slide {
+    display: none;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-slide img {
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    margin: 10px;
+
+}

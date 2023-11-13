@@ -1,0 +1,44 @@
+/* Paleta de cores
+#F9F5EB - Branco
+#E4DCCF - Cinza
+#EA5455 - Vermelho
+#002B5B - Azul
+*/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.HemogestorTitulo{
+  background-color: #A62631;
+  color: #E4DCCF;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #F9F5EB;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+li {
+  display: inline;
+  margin: 0 20px;
+  padding: 10px 20px;
+}
+a{
+  color: #E4DCCF;
+  text-decoration: none;
+}
+th{
+  color: #002B5B;
+  background-color: #E4DCCF;
+}
+td{
+  color: #002B5B;
+  background-color: #E4DCCF;
+}
