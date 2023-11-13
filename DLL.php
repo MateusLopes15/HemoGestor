@@ -481,29 +481,11 @@ function mostraXMLL($folder){
 
 function PegarValor($folder){
   include "cons.php";
-  // Listar XMLs da pasta
-  //if ($handle = opendir($folder)) {
-    //while (false !== ($entry = readdir($handle))) {
-      //if ($entry != "." && $entry != "..") {
-        // Carregar XML usando o simplexml
-        //$ler = $folder . '/' . $entry;
-        //if ($ler != NULL){
+  
           $xml = simplexml_load_file($folder);
-          //unlink($ler);
-          #$pacote = new Estoques();
-          #$pacote->pla = $xml->link->plaquetas.''.$ler.'';
-          #$pacote->$hem = $xml->link->hemacias.''.$ler.'';
-          #$pacote->$plas = $xml->link->plasma.''.$ler.'';
-          #$pacote->$cri = $xml->link->crioprecipitado.''.$ler.'';
-          #$pacote->$gra = $xml->link->granulocitos.''.$ler.'';
-         
           return $xml;
         }
-      //}
-    //}
-  //closedir($handle);
-  //}
-//}
+     
 ?>
 </body>
 </html>
