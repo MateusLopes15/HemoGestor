@@ -39,5 +39,5 @@ button {
     </style>";
 mostraXMLL('XMLSangue');
 echo"<center><a href='AdEstoque.html'>
-<button>Adicionar ao Estoque</button>
+<button>Atualizar o Estoque</button>
 </a></center>";
