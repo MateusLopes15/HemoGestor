@@ -123,14 +123,14 @@ function formularioAlterarDoador($caminhoArquivo){
               <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
               <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap\" rel=\"stylesheet\">
               <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200\" />
-              <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200\" />
+            
           </head>
           <header class=\"HemogestorTitulo\">
               <div class=\"HemogestorTitulo\">
                   <span class=\"material-symbols-outlined\">
                       bloodtype
                       </span>
-                  <h1>Hemogestor</h1>
+                  <h1>HemoGestor</h1>
                   <ul>
                   <li><a href=\"./Menu.html\">Menu</a></li>
                   <li><a href=\"./DoadorFront.html\">Doadores</a></li>
@@ -518,29 +518,11 @@ function mostraXMLL($folder){
 
 function PegarValor($folder){
   include "cons.php";
-  // Listar XMLs da pasta
-  //if ($handle = opendir($folder)) {
-    //while (false !== ($entry = readdir($handle))) {
-      //if ($entry != "." && $entry != "..") {
-        // Carregar XML usando o simplexml
-        //$ler = $folder . '/' . $entry;
-        //if ($ler != NULL){
+  
           $xml = simplexml_load_file($folder);
-          //unlink($ler);
-          #$pacote = new Estoques();
-          #$pacote->pla = $xml->link->plaquetas.''.$ler.'';
-          #$pacote->$hem = $xml->link->hemacias.''.$ler.'';
-          #$pacote->$plas = $xml->link->plasma.''.$ler.'';
-          #$pacote->$cri = $xml->link->crioprecipitado.''.$ler.'';
-          #$pacote->$gra = $xml->link->granulocitos.''.$ler.'';
-         
           return $xml;
         }
-      //}
-    //}
-  //closedir($handle);
-  //}
-//}
+     
 ?>
 </body>
 </html>

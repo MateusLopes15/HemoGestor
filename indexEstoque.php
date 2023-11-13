@@ -10,14 +10,14 @@ echo"
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
     <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
+
 </head>
 <header class='HemogestorTitulo' id='HemogestorTituloEstoque'>
     <div class='HemogestorTitulo'>
         <span class='material-symbols-outlined'>bloodtype</span>
         <h1>HemoGestor</h1>
         <ul>
-            <li><a href='./Menu.html'>Menu</a></li>
+            <li><a href='./Menu.html'>Home</a></li>
             <li><a href='./DoadorFront.html'>Doadores</a></li>
             <li><a href='./indexEstoque.php'>Estoque</a></li>
             <li><a href='./Triagem.html'>Triagem</a></li>
@@ -39,5 +39,5 @@ button {
     </style>";
 mostraXMLL('XMLSangue');
 echo"<center><a href='AdEstoque.html'>
-<button>Adicionar ao Estoque</button>
+<button>Atualizar o Estoque</button>
 </a></center>";
