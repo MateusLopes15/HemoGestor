@@ -4,7 +4,7 @@ include "DLL.php";
 echo"
 <head>
     <meta charset='UTF-8'>
-    <title>Formulário de Cadastro</title>
+    <title>Estoque</title>
     <link rel='stylesheet' href='./style.css'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
@@ -15,7 +15,7 @@ echo"
 <header class='HemogestorTitulo' id='HemogestorTituloEstoque'>
     <div class='HemogestorTitulo'>
         <span class='material-symbols-outlined'>bloodtype</span>
-        <h1>Hemogestor</h1>
+        <h1>HemoGestor</h1>
         <ul>
             <li><a href='./Menu.html'>Menu</a></li>
             <li><a href='./DoadorFront.html'>Doadores</a></li>

@@ -3,7 +3,9 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #D9D9D9;
+    background-image: url(imagens/imagem1.png);
+    background-repeat: no-repeat;
+    background-position: 65% 35%;
 }
 
 .material-symbols-outlined {
@@ -46,6 +48,10 @@ body{
 .HemogestorTitulo a{
     color: #E4DCCF;
     text-decoration: none;
+}
+
+.HemogestorTitulo a:hover {
+    color: #002B5B;
 }
 
 .menu-container {
@@ -98,20 +104,8 @@ body{
     object-fit: cover;
 }
 
-.texto {
-    font-size: 30px;
-    text-align: justify;
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    transform: translate(-20%, -20%);
-    -webkit-text-stroke: 1px #000000;
-    color: #EA5455;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 footer {
-    background-color: #EA5455;
+    background-color: #A62631;
     padding: 20px 0;
     text-align: center;
 }

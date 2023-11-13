@@ -117,6 +117,7 @@ function formularioAlterarDoador($caminhoArquivo){
           <head>
               <meta charset=\"UTF-8\">
               <title>Formulário de Cadastro</title>
+              <link rel='stylesheet' href='./style_vizu_doadores.css'>
               <link rel=\"stylesheet\" href=\"./style.css\">
               <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
               <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
@@ -354,6 +355,7 @@ function mostraXML($folder){
                     <a href='alterarDoador.php?id=".$idArquivo."' class='bonito'> Alterar </a>
                     </center>
                     </div>
+                    <br>
               </body>
               </html>";
         }
