@@ -248,13 +248,13 @@ function formularioAlterarDoador($caminhoArquivo){
   }
 }
 
-function RelatorioAnalitico(){
+function GetAllDadosDoador(){
   include "cons.php";
-  $folder = 'XMLSangue';
-   if ($handle = opendir('XMLSangue')) {
+  $folder = 'XML';
+   if ($handle = opendir('XML')) {
     //array para arquivo
-    $estoqueSangue = array(
-      array('Tipo Sanguineo', 'Plaquetas', 'Hemacias', 'Plasma', 'Crioprecipitados', 'Granulocitos')
+    $doadores = array(
+      array('id','Nome Doador', 'e-mail', 'Nome Social', 'Telefone', 'CPF', 'Sexo', 'Data nascimento', 'Tipo Sanguineo', 'Tipo de Doador', 'Autoriza Comunicação')
     );
      while (false !== ($entry = readdir($handle))) {
        if ($entry != "." && $entry != "..") {
@@ -264,63 +264,111 @@ function RelatorioAnalitico(){
            $xml = simplexml_load_file($ler);
   
            //preenche array para arquivo
-           $estoque = array($xml->link->tipoSanguineo, $xml->link->plaquetas, $xml->link->hemacias, $xml->link->plasma, $xml->link->crioprecipitado, $xml->link->granulocitos);
-           array_push($estoqueSangue, $estoque); 
+           $doador = array($idArquivo, $xml->link->nome, $xml->link->email, $xml->link->nomeSocial, $xml->link->telefone, $xml->link->cpf, $xml->link->sexo, $xml->link->dataNascimento, $xml->link->tipoSanguineo, $xml->link->tipoDoador, $xml->link->autorizaComunicacao);
+           array_push($doadores, $doador); 
           }
         }
       }
-  
-      //cria arquivo
-      $fp = fopen('relatorio.csv', 'w');
-      foreach ($estoqueSangue as $sangue) {
-        fputcsv($fp, $sangue);
-      }
-      fclose($fp);
-  
-      //download arquivo
-      header("Content-type: application/x-file-to-save"); 
-      header("Content-Disposition: attachment; filename=\"relatorio.csv\"");
-      ob_end_clean();
-      readfile('relatorio.csv');
     }
+    return $doadores;
+} 
+
+function GetAllEstoque(){
+  $folder = 'XMLSangue';
+  if ($handle = opendir('XMLSangue')) {
+   //array para arquivo
+   $estoqueSangue = array(
+     array('Tipo Sanguineo', 'Plaquetas', 'Hemacias', 'Plasma', 'Crioprecipitados', 'Granulocitos')
+   );
+    while (false !== ($entry = readdir($handle))) {
+      if ($entry != "." && $entry != "..") {
+        $ler = $folder . '/' . $entry;
+        $idArquivo = substr($entry,0,16);
+        if ($ler != NULL){
+          $xml = simplexml_load_file($ler);
+ 
+          //preenche array para arquivo
+          $estoque = array($xml->link->tipoSanguineo, $xml->link->plaquetas, $xml->link->hemacias, $xml->link->plasma, $xml->link->crioprecipitado, $xml->link->granulocitos);
+          array_push($estoqueSangue, $estoque); 
+         }
+       }
+     }
   }
+  return $estoqueSangue;
+}
 
-function RelatorioSintetico(){
-include "cons.php";
-$folder = 'XMLSangue';
- if ($handle = opendir('XMLSangue')) {
-  //array para arquivo
-  $estoqueSangue = array(
-    array('Tipo Sanguineo', 'Plaquetas', 'Hemacias', 'Plasma', 'Crioprecipitados', 'Granulocitos')
-  );
-   while (false !== ($entry = readdir($handle))) {
-     if ($entry != "." && $entry != "..") {
-       $ler = $folder . '/' . $entry;
-       $idArquivo = substr($entry,0,16);
-       if ($ler != NULL){
-         $xml = simplexml_load_file($ler);
-
-         //preenche array para arquivo
-         $estoque = array($xml->link->tipoSanguineo, $xml->link->plaquetas, $xml->link->hemacias, $xml->link->plasma, $xml->link->crioprecipitado, $xml->link->granulocitos);
-         array_push($estoqueSangue, $estoque); 
+function GetAllTriagem(){
+  include "cons.php";
+  $folder = 'TriagemXML';
+   if ($handle = opendir('TriagemXML')) {
+    //array para arquivo
+    $traigemAll = array(
+      array('idDoador', 'Aprovado', 'idTriagem')
+    );
+     while (false !== ($entry = readdir($handle))) {
+       if ($entry != "." && $entry != "..") {
+         $ler = $folder . '/' . $entry;
+         //$idArquivo = substr($entry,0,16);
+         if ($ler != NULL){
+           $xml = simplexml_load_file($ler);
+  
+           //preenche array para arquivo
+           $triagem = array($xml->link->idoador, $xml->link->aprovado,  $xml->link->id);
+           array_push($traigemAll, $triagem); 
+          }
         }
       }
     }
+    return $traigemAll;
+} 
 
-    //cria arquivo
-    $fp = fopen('relatorio.csv', 'w');
-    foreach ($estoqueSangue as $sangue) {
-      fputcsv($fp, $sangue);
+function RelatorioAnalitico(){
+  include "cons.php";
+  $todosDoadores = GetAllDadosDoador();
+  $todosTriagem = GetAllTriagem();
+  $itemsRelatorio = array(array('idTriagem', 'Aprovado','Nome Doador', 'e-mail', 'Nome Social', 'Telefone', 'CPF', 'Sexo', 'Data nascimento', 'Tipo Sanguineo', 'Tipo de Doador', 'Autoriza Comunicação'));
+  //cria arquivo
+  foreach ($todosDoadores as $doador) {
+    foreach($todosTriagem as $triagem){
+      if($doador[0] == $triagem[0]){
+        $TriagemDoador = array($triagem[2], $triagem[1], $doador[1], $doador[2], $doador[3], $doador[4], $doador[5], $doador[6], $doador[7], $doador[8], $doador[9]);
+        array_push($itemsRelatorio, $TriagemDoador); 
+      }
     }
-    fclose($fp);
-
-    //download arquivo
-    header("Content-type: application/x-file-to-save"); 
-    header("Content-Disposition: attachment; filename=\"relatorio.csv\"");
-    ob_end_clean();
-    readfile('relatorio.csv');
   }
+
+  //cria arquivo
+  $fp = fopen('relatorio.csv', 'w');
+  foreach ($itemsRelatorio as $item) {
+    fputcsv($fp, $item);
+  }
+  fclose($fp);
+
+  //download arquivo
+  header("Content-type: application/x-file-to-save"); 
+  header("Content-Disposition: attachment; filename=\"relatorio.csv\"");
+  ob_end_clean();
+  readfile('relatorio.csv');
 }
+
+function RelatorioSintetico(){
+  include "cons.php";
+  $todosEstoque = GetAllEstoque();
+
+  //cria arquivo
+  $fp = fopen('relatorio.csv', 'w');
+  foreach ($todosEstoque as $sangue) {
+    fputcsv($fp, $sangue);
+  }
+  fclose($fp);
+
+  //download arquivo
+  header("Content-type: application/x-file-to-save"); 
+  header("Content-Disposition: attachment; filename=\"relatorio.csv\"");
+  ob_end_clean();
+  readfile('relatorio.csv');
+}
+
 
 function mostraXML($folder){
   include "cons.php";

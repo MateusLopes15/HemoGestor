@@ -1,9 +1,2 @@
-"Tipo Sanguineo",Plaquetas,Hemacias,Plasma,Crioprecipitados,Granulocitos
-A+,10,15,17,20,25
-A-,14,14,14,14,14
-AB+,4,4,4,4,4
-AB-,321,421,32,55,11
-B+,19,14,6,69,11
-B-,315,4126,234,26,47
-O+,8,8,8,8,8
-O-,433,124,5,6,7
+idTriagem,Aprovado,"Nome Doador",e-mail,"Nome Social",Telefone,CPF,Sexo,"Data nascimento","Tipo Sanguineo","Tipo de Doador","Autoriza Comunicação"
+0000000002,Aprovado,"Mateus Ambrozioo",Cassia19@gmail.com,"Não possui",32617224,025847215498,Masculino,1991-06-23,A+,"Doador de Campanha"
