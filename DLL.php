@@ -247,16 +247,40 @@ function formularioAlterarDoador($caminhoArquivo){
   }
 }
 
-function listaBolsa(){
-  include "cons.php";
+function RelatorioAnalitico(){
+include "cons.php";
+$folder = 'XMLSangue';
+ if ($handle = opendir('XMLSangue')) {
+  //array para arquivo
+  $estoqueSangue = array(
+    array('Tipo Sanguineo', 'Plaquetas', 'Hemacias', 'Plasma', 'Crioprecipitados', 'Granulocitos')
+  );
+   while (false !== ($entry = readdir($handle))) {
+     if ($entry != "." && $entry != "..") {
+       $ler = $folder . '/' . $entry;
+       $idArquivo = substr($entry,0,16);
+       if ($ler != NULL){
+         $xml = simplexml_load_file($ler);
 
-  $caminhoArquivo = 'xmll/dados.xml24';
-  if ($handle = opendir('xmll')) {
-    $ler = $caminhoArquivo;
-    if ($ler != NULL){
-      $xml = simplexml_load_file($ler);
-      return $xml;
+         //preenche array para arquivo
+         $estoque = array($xml->link->tipoSanguineo, $xml->link->plaquetas, $xml->link->hemacias, $xml->link->plasma, $xml->link->crioprecipitado, $xml->link->granulocitos);
+         array_push($estoqueSangue, $estoque); 
+        }
+      }
     }
+
+    //cria arquivo
+    $fp = fopen('relatorio.csv', 'w');
+    foreach ($estoqueSangue as $sangue) {
+      fputcsv($fp, $sangue);
+    }
+    fclose($fp);
+
+    //download arquivo
+    header("Content-type: application/x-file-to-save"); 
+    header("Content-Disposition: attachment; filename=\"relatorio.csv\"");
+    ob_end_clean();
+    readfile('relatorio.csv');
   }
 }
 
@@ -278,6 +302,8 @@ function mostraXML($folder){
           <title>Informações de Cadastro</title>
           </head>";
         echo "<body>
+                <br>
+                <br>
                 <div class='container'>
                   <table>
                     <tr>
