@@ -24,7 +24,8 @@ echo"
             <li><a href='./Relatorio.html'>Relatório</a></li>
         </ul>
     </div>
-</header>";
+</header>
+<br><br><br><br><br>";
 //echo "<meta HTTP-EQUIV='refresh' CONTENT='5;URL=index_s.php'>";
 
 echo"
