@@ -451,6 +451,8 @@ function mostraXML($folder){
 }
 
 function validacaoUsuario($usuario, $senha){
+  include "cons.php";
+
   $pasta = 'arquivos/usuario';
   $senhaHash = hash('sha256', $senha);
 
@@ -462,14 +464,15 @@ function validacaoUsuario($usuario, $senha){
         if ($ler != NULL){
           $xml = simplexml_load_file($ler);
           if($xml->link->nomeUsuario == $usuario && $xml->link->senha == $senhaHash){
-            return "Usuario encontrado!";
+            $local =$local."Menu.html";
           }elseif($xml->link->nomeUsuario != $usuario){
-            return "Usuario nao encontrado!";
+            $local =$local."login.html";
           }elseif($xml->link->nomeUsuario == $usuario && $xml->link->senha != $senhaHash){
-            return "Senha inserida incorreta!";
+            $local =$local."login.html";
           }else{
             return "Erro ao processar informacoes do login!";
           }
+          header($local);
         }
       }
     }
